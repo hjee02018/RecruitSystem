@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" modified="2023-05-11T07:04:42.594Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="f_-saOGx3s4LkEPbtxte" version="21.2.9" type="device">
+  <diagram name="페이지-1" id="43qugqv06Tp5dHWsN9Hs">
+    <mxGraphModel dx="-33" dy="470" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-1" value="일반 회원" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="150" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-2" value="회사 회원" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="437" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-3" value="지원정보조회" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1690" y="123" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-4" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="pTrekW-3SXCPSAQBGSVi-1" target="pTrekW-3SXCPSAQBGSVi-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="180" as="sourcePoint" />
+            <mxPoint x="1860" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-5" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="pTrekW-3SXCPSAQBGSVi-1" target="pTrekW-3SXCPSAQBGSVi-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1480" y="180" as="sourcePoint" />
+            <mxPoint x="1700" y="183" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-6" value="&lt;채용 정보 시스템&gt;" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="1390" y="80" width="670" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-7" value="지원자 통계 정보&lt;br&gt;보기" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="pTrekW-3SXCPSAQBGSVi-6">
+          <mxGeometry x="301" y="370" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-8" value="지원 취소" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="pTrekW-3SXCPSAQBGSVi-6">
+          <mxGeometry x="301" y="127" width="109" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-9" value="지원 횟수 정보&lt;br&gt;보기" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="pTrekW-3SXCPSAQBGSVi-6">
+          <mxGeometry x="298" y="312" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-10" value="지원정보삭제" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="pTrekW-3SXCPSAQBGSVi-6">
+          <mxGeometry x="301" y="231" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-11" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.3333333333333333;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pTrekW-3SXCPSAQBGSVi-1" target="pTrekW-3SXCPSAQBGSVi-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1780" y="290" as="sourcePoint" />
+            <mxPoint x="1830" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-12" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="pTrekW-3SXCPSAQBGSVi-2" target="pTrekW-3SXCPSAQBGSVi-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1470" y="467" as="sourcePoint" />
+            <mxPoint x="1830" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-13" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="pTrekW-3SXCPSAQBGSVi-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1470" y="170" as="sourcePoint" />
+            <mxPoint x="1740" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pTrekW-3SXCPSAQBGSVi-14" value="지원자 통계 정보&lt;br&gt;보기" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1690" y="450" width="100" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
