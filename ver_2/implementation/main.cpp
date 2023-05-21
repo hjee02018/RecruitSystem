@@ -1,9 +1,4 @@
-//
-//  main.cpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/20.
-//
+
 
 // 헤더 선언
 #include <stdio.h>

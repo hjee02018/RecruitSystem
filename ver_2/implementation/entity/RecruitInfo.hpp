@@ -1,9 +1,3 @@
-//
-//  RecruitInfo.hpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/21.
-//
 
 #ifndef RecruitInfo_hpp
 #define RecruitInfo_hpp

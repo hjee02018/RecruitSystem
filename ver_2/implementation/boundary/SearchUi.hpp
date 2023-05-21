@@ -1,10 +1,3 @@
-//
-//  SearchUi.hpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/21.
-//
-
 #ifndef SearchUi_hpp
 #define SearchUi_hpp
 #define MAX_STRING 32

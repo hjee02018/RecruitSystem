@@ -1,9 +1,3 @@
-//
-//  ApplyInfo.hpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/21.
-//
 
 #ifndef ApplyInfo_hpp
 #define ApplyInfo_hpp

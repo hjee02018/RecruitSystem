@@ -1,10 +1,3 @@
-//
-//  ApplyCompany.hpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/21.
-//
-
 #ifndef ApplyCompany_hpp
 #define ApplyCompany_hpp
 

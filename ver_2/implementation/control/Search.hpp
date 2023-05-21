@@ -1,10 +1,3 @@
-//
-//  Search.hpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/21.
-//
-
 #ifndef Search_hpp
 #define Search_hpp
 

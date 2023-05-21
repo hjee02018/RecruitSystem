@@ -1,9 +1,3 @@
-//
-//  ApplyInfoCollection.hpp
-//  homework3
-//
-//  Created by 김규철 on 2023/05/21.
-//
 
 #ifndef ApplyInfoCollection_hpp
 #define ApplyInfoCollection_hpp
