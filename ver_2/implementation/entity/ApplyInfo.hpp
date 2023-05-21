@@ -1,4 +1,3 @@
-
 #ifndef ApplyInfo_hpp
 #define ApplyInfo_hpp
 

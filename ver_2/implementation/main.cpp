@@ -1,5 +1,3 @@
-
-
 // 헤더 선언
 #include <stdio.h>
 #include <string.h>

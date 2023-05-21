@@ -1,4 +1,3 @@
-
 #ifndef RecruitInfo_hpp
 #define RecruitInfo_hpp
 

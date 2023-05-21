@@ -1,8 +1,5 @@
 #include "SearchUi.hpp"
 
-
-
-
 /**
  * shows the start screen and receives input from the user.<- "함수가 수행하는 작업"
  *

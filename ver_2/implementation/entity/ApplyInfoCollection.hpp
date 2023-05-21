@@ -1,4 +1,3 @@
-
 #ifndef ApplyInfoCollection_hpp
 #define ApplyInfoCollection_hpp
 
