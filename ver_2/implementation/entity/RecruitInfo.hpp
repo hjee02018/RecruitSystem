@@ -14,7 +14,6 @@ using namespace std;
 class RecruitInfo
 {
 private:
-    
     string m_company_name;
     string m_depart_name;
     int m_business_number;
@@ -22,7 +21,6 @@ private:
     int m_num_of_people;
     time_t m_deadline;
     string m_task;
-    bool m_close;
     ApplyInfoCollection m_apply_info_collection;
     
 public:
