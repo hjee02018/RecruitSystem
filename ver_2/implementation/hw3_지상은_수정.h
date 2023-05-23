@@ -82,7 +82,9 @@ private:
 public:
 	bool isComp = 0; // 하다가 필요해서 생성 -> public
 	void createCompanyMember(const char* name, const char* num, const char* id, const char* pw);
-};
+	RecruitInfo getRecruitment() {
+		return recruitment;
+	}
 
 
 

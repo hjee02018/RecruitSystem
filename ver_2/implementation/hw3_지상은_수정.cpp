@@ -130,6 +130,7 @@ void GenMember :: createGeneralMember(const char* name, const char* num, const c
 	isGen = 1;
 }
 GenMember gen[MAX_ACCOUNT];
+int numGen = 0
 
 void CompMember :: createCompanyMember(const char* name, const char* num, const char* id, const char* pw) {
 	strcpy_s(companyName, MAX_STRING + 1, name);
@@ -140,6 +141,7 @@ void CompMember :: createCompanyMember(const char* name, const char* num, const 
 	isComp = 1;
 }
 CompMember comp[MAX_ACCOUNT];
+int numComp = 0
 
 char User[MAX_STRING + 1] = ""; // 현재 사용하고 있는 user 저장
 int now_idx; // 현재 사용하고 있는 user 가 저장된 index 저장
@@ -170,6 +172,7 @@ void AddMember :: addNewGeneralMember(const char* name, const char* num, const c
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].isMember == 0) {
 			mem[i].addNewGeneralMember(name, num, id, pw);
+			numGen++;
 			break;
 		}
 	}
@@ -178,6 +181,7 @@ void AddMember :: addNewCompanyMember(const char* name, const char* num, const c
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].isMember == 0) {
 			mem[i].addNewCompanyMember(name, num, id, pw);
+			numComp++;
 			break;
 		}
 	}
