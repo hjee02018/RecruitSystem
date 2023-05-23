@@ -11,21 +11,22 @@
 ApplyInfo ApplyCompany::applyCompany(int business_number)
 {
     
-    /**
-     어떻게 얻어올지....?
-     */
-    vector<RecruitInfo> recruit_info_dao; // 저장된 채용 정보 리스트 ? 모든 회사직원들중 반복하면서 찾아야하나?
-    
-    for(int i=0; i< recruit_info_dao.size(); i++)
+    vector<RecruitInfo> recruit_info_list;
+
+    for(int i=0; i<numComp; i++){
+        recruit_info_list.push_back(comp[i].getRecruitment());
+    }
+
+    for(int i=0; i< recruit_info_list.size(); i++)
     {
-        if(recruit_info_dao[i].getBusinessNumber() == business_number)
+        if(recruit_info_list[i].getBusinessNumber() == business_number)
         {
-            string company_name = recruit_info_dao[i].getCompanyName();
-            int business_number = recruit_info_dao[i].getBusinessNumber();
-            string task = recruit_info_dao[i].getTask();
+            string company_name = recruit_info_list[i].getCompanyName();
+            int business_number = recruit_info_list[i].getBusinessNumber();
+            string task = recruit_info_list[i].getTask();
             
             ApplyInfo applyInfo(company_name, business_number, task);
-            recruit_info_dao[i].addNewApply(applyInfo);
+            recruit_info_list[i].addNewApply(applyInfo);
             return applyInfo;
         }
     }
