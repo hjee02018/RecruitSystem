@@ -3,9 +3,11 @@
 #include<iostream>
 #include<fstream>
 #include<string.h>
-
+#include <list>
 using namespace std;
 
+list <GenMember> g_genMemberlist;
+list <CompMember> g_compMemberlist;
 
 void doTask();
 
@@ -15,6 +17,9 @@ int main()
 {
 	errno_t input = fopen_s(&in_fp, INPUT_FILE_NAME, "r");
 	errno_t ouput = fopen_s(&out_fp, OUTPUT_FILE_NAME, "w");
+
+	list<CompMember> m_compMemberlist;
+
 
 	doTask();
 
@@ -34,7 +39,29 @@ void doTask()
 
 		switch (menu_level_1)
 		{
-		case 1:
+		case 4:
+			switch (menu_level_2)
+			{
+			case 3:
+				fprintf_s(out_fp, "4.3. 지원 정보 조회\n");
+				break;
+			case 4:
+				fprintf_s(out_fp, "4.4. 지원 취소\n");
+				break;
+			default:
+				break;
+			}
+		case 5:
+			switch (menu_level_2)
+			{
+			case 1:
+				fprintf_s(out_fp, "5.1. 지원 정보 통계\n");
+				break;
+			default:
+				break;
+			}
+		}
+		/*case 1:
 		{
 			switch (menu_level_2)
 			{
@@ -76,7 +103,7 @@ void doTask()
 			}
 			break;
 		}
-		}
+		}*/
 		return;
 	}
 }
