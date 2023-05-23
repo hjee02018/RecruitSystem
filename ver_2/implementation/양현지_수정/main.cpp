@@ -1,4 +1,5 @@
 #include "ApplyMangement.h"
+#include "MemberManagement.h"
 
 #include<iostream>
 #include<fstream>
@@ -36,13 +37,16 @@ void doTask()
 		former_menu_level_2 = menu_level_2;
 
 		fscanf_s(in_fp, "%d %d ", &menu_level_1, &menu_level_2);
+		int memberID;
 
 		switch (menu_level_1)
 		{
+			// 2.1 로그인을 함과 동시에 ID를 저장
 		case 4:
 			switch (menu_level_2)
 			{
 			case 3:
+				// memberID를 가지고 g_genMemberlist에서 해당 member의 showApplyInfo함수 호출
 				fprintf_s(out_fp, "4.3. 지원 정보 조회\n");
 				break;
 			case 4:

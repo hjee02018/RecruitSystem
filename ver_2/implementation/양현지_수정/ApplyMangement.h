@@ -4,6 +4,7 @@
 #include<fstream>
 #include <list>
 #include <map>
+#include "MemberManagement.h"
 
 using namespace std;
 
@@ -39,41 +40,6 @@ public:
 	int getRecruitCount();
 	string getDepartName();
 };
-
-class Member {
-private:
-	bool memType; // MemberType ( True : GeneralMem, False : CompanyMem )
-
-protected:
-	char memId[MAX_STRING + 1]; //ID
-	char memPw[MAX_STRING + 1]; //password
-
-public:
-
-};
-Member mem[MAX_ACCOUNT];
-
-class GenMember : public Member
-{
-private:
-	list< ApplyInfo > m_applyList;
-
-public:
-	void showApplyInfo();
-	void cancelApplyInfo(string compName,int compNo,string departName);
-	void getDepartApplyCount();
-};
-GenMember gen[MAX_ACCOUNT];
-
-class CompMember : public Member
-{
-private:
-	list< RecruitInfo > m_recruitlist;
-
-public:
-	void getRecruitDepartInfo();
-};
-CompMember comp[MAX_ACCOUNT];
 
 
 class CancelApplyInfo
