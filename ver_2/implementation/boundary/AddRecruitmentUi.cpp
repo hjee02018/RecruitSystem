@@ -20,8 +20,6 @@ RecruitInfo AddRecruitmentUi::startInterface(CompMember compMember,FILE *in_fp)
     // 입력 형식 : 업무, 인원 수, 신청 마감
     fscanf(in_fp, "%s %d %lld", task, numPeople, deadline);
     RecruitInfo recruitment(ID, task, numPeople, deadline); //Recruitment 객체 생성
-    vector<RecruitInfo> recruitmentList; // 채용 리스트 -> 배열로 저장
-    recruitmentList.push_back(recruitment); //채용 리스트에 추가 -> 반환 어떻게?
     return recruitment; 
 }
 /**

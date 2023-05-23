@@ -85,6 +85,9 @@ public:
 	RecruitInfo getRecruitment() {
 		return recruitment;
 	}
+	RecruitInfo CompMember::setRecruitment(string task, int numPeople, time_t deadline) {
+		recruitment.setRecruitment(task, numPeople, deadline);
+	}
 
 
 
@@ -147,3 +150,4 @@ class Logout {
 public:
 	void tryLogout();
 };
+

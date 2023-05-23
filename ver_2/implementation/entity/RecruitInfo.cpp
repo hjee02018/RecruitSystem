@@ -59,3 +59,8 @@ time_t RecruitInfo::getDeadline()
 void RecruitInfo::addNewApply(ApplyInfo apply) {
     m_apply_info_collection.addApplyInfo(apply);
 }
+void RecruitInfo::setRecruitment(string task, int numPeople, time_t deadline) {
+    this->m_task = task;
+    this->m_numPeople = numPeople;
+    this->m_deadline = deadline;
+}

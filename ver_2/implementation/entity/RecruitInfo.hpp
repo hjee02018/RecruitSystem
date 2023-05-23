@@ -37,6 +37,7 @@ public:
     bool operator<(const RecruitInfo& other) const {
         return this->m_company_name < m_company_name;
     }
+    void setRecruitment(string task, int numPeople, time_t deadline);
 };
 
 #endif /* RecruitInfo_hpp */
