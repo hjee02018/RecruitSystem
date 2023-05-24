@@ -11,29 +11,48 @@ CompMember comp[MAX_ACCOUNT];
 int numComp = 0;
 GenMember gen[MAX_ACCOUNT];
 int numGen = 0;
-string User[MAX_STRING + 1] = ""; // ? ??? ??? user ?
-int now_idx; // ? ??? ??? user ? ? index ?
+string User[MAX_STRING + 1] = ""
+int now_idx; 
 
+/**
+ * 회사 회원이 등록한 채용 정보 목록 반환
+ * 
+ * @return recruitment
+ * @throws nothing
+*/
 RecruitInfo CompMember::getRecruitment()
 {
 	return recruitment;
 }
 
-
-
-
-
-
+/**
+ * 회원가입을 위한 정보 입력받기
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void AddMemberUI::createNewMember() {
 	fscanf_s(in_fp, "%d %s %s %s %s", inputType, sizeof(inputType), inputName, sizeof(inputName),
 		inputNum, sizeof(inputNum), inputId, sizeof(inputId), inputPw, sizeof(inputPw));
 }
 
+/**
+ * 입력받은 정보 출력
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void AddMemberUI::startInterface() {
-	fprintf_s(out_fp, "1.1. ??\n");
+	fprintf_s(out_fp, "1.1. 회원가입\n");
 	fprintf_s(out_fp, ">  %d %s %s %s %s\n", inputType, inputName, inputNum, inputId, inputPw);
 }
 
+/**
+ * 회원 정보 입력받은 후, 저장하고 화면 출력
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void AddMember::addMember() {
 	AddMemberUI addmemberui;
 	addmemberui.createNewMember();
@@ -46,6 +65,17 @@ void AddMember::addMember() {
 	}
 	addmemberui.startInterface();
 }
+
+/**
+ * 전체 회원 배열에 일반 회원 저장
+ * 
+ * @param name : 회원 이름
+ * @param num : 회원 주민등록번호
+ * @param id : 회원 id
+ * @param pw : 회원 pw
+ * @return nothing
+ * @throws nothing
+*/
 void AddMember::addNewGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].isMember == 0) {
@@ -55,6 +85,17 @@ void AddMember::addNewGeneralMember(const string* name, const string* num, const
 		}
 	}
 }
+
+/**
+ * 전체 회원 배열에 회사 회원 저장
+ * 
+ * @param name : 회사 이름
+ * @param num : 사업자번호
+ * @param id : 회원 id
+ * @param pw : 회원 pw
+ * @return nothing
+ * @return nothing
+*/
 void AddMember::addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].isMember == 0) {
@@ -65,14 +106,33 @@ void AddMember::addNewCompanyMember(const string* name, const string* num, const
 	}
 }
 
+/**
+ * 로그인 정보 입력
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void LoginUI::tryLogin() {
 	fscanf_s(in_fp, "%s %s", inputId, sizeof(inputId), inputPw, sizeof(inputPw));
 }
+
+/**
+ * 로그인 정보 출력
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void LoginUI::startInterface() {
-	fprintf_s(out_fp, "2.1. ?��?\n");
+	fprintf_s(out_fp, "2.1. 로그인\n");
 	fprintf_s(out_fp, "> %s %s\n", inputId, inputPw);
 }
 
+/**
+ * 로그인 가능 유무 확인
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void Login::tryLogin() {
 	LoginUI loginui;
 	loginui.tryLogin();
@@ -86,14 +146,31 @@ void Login::tryLogin() {
 	}
 }
 
+/**
+ * 회원의 delete 버튼 클릭
+*/
 void DeleteMemberUI::tryDelete() {
-	// ??,,, ?,,?
+	
 }
+
+/**
+ * 회원 탈퇴 정보 출력
+ * 
+ * @param Id : 회원 Id
+ * @return nothing
+ * @throws nothing
+ */ 
 void DeleteMemberUI::startInterface(string* Id) {
-	fprintf_s(out_fp, "1.2. ????\n");
+	fprintf_s(out_fp, "1.2. 회원탈퇴\n");
 	fprintf_s(out_fp, "> %s\n", Id);
 }
 
+/**
+ * 회원 정보 삭제
+ * 
+ * @return nothing
+ * @throws nothing
+*/
 void DeleteMember::deleteMemberAuth() {
 	DeleteMemberUI deletememberui;
 
@@ -106,14 +183,24 @@ void DeleteMember::deleteMemberAuth() {
 	deletememberui.tryDelete();
 }
 
+/**
+ * 회원이 로그아웃 버튼 클릭
+*/
 void LogoutUI::tryLogout() {
 
 }
+
+/**
+ * 로그아웃 정보 출력
+*/
 void LogoutUI::startInterface(string* Id) {
-	fprintf_s(out_fp, "2.2. ?��???\n");
+	fprintf_s(out_fp, "2.2. 로그아웃\n");
 	fprintf_s(out_fp, "> %s \n", Id);
 }
 
+/**
+ * 로그아웃
+*/
 void Logout::tryLogout() {
 	string id[MAX_ACCOUNT];
 	mem[now_idx].toLogout(id);

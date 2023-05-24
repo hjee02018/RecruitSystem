@@ -8,7 +8,17 @@ using namespace std;
 #define MAX_STRING 32
 #define MAX_ACCOUNT 100
 
-// ȸ��
+/**
+ * Represents a car object. <- "클래스의 역할"
+ * 
+ * This class provides methods for starting the car, stopping the car,
+ * and changing its speed. <- "클래스의 목적" (과제에서는 생략해도 무방할 듯)
+ */
+
+
+/**
+ * CompMember 와 GenMember 의 부모클래스로, 회원에 대한 변수와 회원 관리를 위한 함수 선언
+*/
 class Member {
 private:
 	bool memType; // MemberType ( True : GeneralMem, False : CompanyMem )
@@ -26,7 +36,9 @@ public:
 	void toLogout(string* id);
 };
 
-// �Ϲ�ȸ��
+/**
+ * 일반 회원에 대한 변수와 일반 회원 관리를 위한 함수 선언
+*/
 class GenMember : public Member
 {
 private:
@@ -45,7 +57,9 @@ public:
 	void getDepartApplyCount();
 };
 
-// ȸ��ȸ��
+/**
+ * 회사 회원에 대한 변수와 회사 회원 관리를 위한 함수 선언
+*/
 class CompMember : public Member
 {
 private:

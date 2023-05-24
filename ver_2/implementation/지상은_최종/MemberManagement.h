@@ -13,18 +13,10 @@ FILE* in_fp, * out_fp;
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
 
-class ApplyInfo
-{
 
-};
-
-class RecruitInfo
-{
-
-};
-
-
-//ȸ������
+/**
+ * 회원가입 관련 boundary class
+*/
 class AddMemberUI
 {
 public:
@@ -38,6 +30,9 @@ public:
 	void startInterface();
 };
 
+/**
+ * 회원가입 관련 control class
+*/
 class AddMember
 {
 public:
@@ -46,7 +41,9 @@ public:
 	void addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw);
 };
 
-//�α���
+/**
+ * 로그인 관련 boundary class
+*/
 class LoginUI {
 public:
 	string inputId[MAX_STRING];
@@ -55,30 +52,43 @@ public:
 	void startInterface();
 };
 
+/**
+ * 로그인 관련 control class
+*/
 class Login {
 public:
 	void tryLogin();
 };
 
-//ȸ��Ż��
+/**
+ * 회원탈퇴 관련 boundary class
+*/
 class DeleteMemberUI {
 public:
 	void tryDelete();
 	void startInterface(string* Id);
 };
 
+/**
+ * 회원탈퇴 관련 control class
+*/
 class DeleteMember {
 public:
 	void deleteMemberAuth();
 };
 
-//�α׾ƿ�
+/**
+ * 로그아웃 관련 boundary class
+*/
 class LogoutUI {
 public:
 	void tryLogout();
 	void startInterface(string* Id);
 };
 
+/**
+ * 로그아웃 관련 control class
+*/
 class Logout {
 public:
 	void tryLogout();

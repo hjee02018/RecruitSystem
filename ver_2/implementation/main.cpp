@@ -56,16 +56,35 @@ void doTask()
                 {
                     case 1:   // "1.1. 회원가입“ 메뉴 부분
                     {
-                        // join() 함수에서 해당 기능 수행
-                        join();
-                        
+                        AddMember addmember;
+                        addmember.addMember();
                         break;
                     }
-                    case 2:
+                    case 2: // 1.2. 회원 탈퇴
                     {
+                        DeleteMember deletemember;
+				        deletemember.deleteMemberAuth();
                         break;
                     }
                 } // 1 -
+            }
+            case 2:
+            {
+                switch(menu_level_2)
+                {
+                    case 1: // 2.1. 로그인
+                    {
+                        Login login;
+				        login.tryLogin();
+                        break;
+                    }
+                    case 2: // 2.2. 로그아웃
+                    {
+                        Logout logout;
+				        logout.tryLogout();
+                        break;
+                    }
+                }
             }
             case 3:
             {
