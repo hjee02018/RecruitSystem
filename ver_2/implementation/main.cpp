@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
-#include "Search.hpp"
-#include "SearchUi.hpp"
-#include "RecruitInfo.hpp"
-#include "ApplyUi.hpp"
+#include "MemberManagement.h"
+#include "RecruitManagement.h"
+#include "ApplyManagement.h"
 
 
 // 상수 선언
