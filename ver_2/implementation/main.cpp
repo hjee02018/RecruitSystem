@@ -68,6 +68,25 @@ void doTask()
                     }
                 } // 1 -
             }
+            case 3:
+            {
+                switch(menu_level_2)
+                case 1:
+                {
+                    AddRecruitmentUi addRecruitmentUi;
+                    string task;
+                    int num_of_people;
+                    time_t deadline;
+                    addRecruitmentUi.startInterface(task,num_of_people,deadline,in_fp);
+                    addRecruitmentUi.createNewRecruitment(compMember,task,num_of_people,deadline);
+                    break;
+                }
+                case 2:
+                {
+                    RecruitmentListUi recruitmentListUi;
+                    recruitmentListUi.selectRecruitmentList(compMember,out_fp);
+                }
+            }
             case 4:
             {
                 switch (menu_level_2) {
