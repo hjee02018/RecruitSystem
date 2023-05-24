@@ -29,14 +29,6 @@ void AddRecruitmentUi::createNewRecruitment(CompMember compMember,string task, i
 }
 
 /**
- * 
- */
-void RecruitmentListUi::startInterface()
-{
-    //입력 내용 없음
-}
-
-/**
  * 회사 회원 ID를 이용해 회원이 등록한 채용 정보 리스트 출력
  *
  * @param company_name to find input company_name <- "매개변수1"

@@ -25,9 +25,7 @@ public:
  */
 class RecruitmentListUi
 {
-private:
 public:
-    void startInterface();
     void selectRecruitmentList(CompMember compMember, FILE* out_fp);
 };
 /**
@@ -47,7 +45,6 @@ public:
  */
 class SearchUi
 {
-private:
 public:
     string startInterface(FILE* in_fp);
     void searchRecruitmentInfoByCompanyName(string company_name, FILE* out_fp);
@@ -70,7 +67,6 @@ public:
 class ShowRecruitmentList
 {
 public:
-
     void showRecruitmentList(CompMember CompMember);
 };
 
