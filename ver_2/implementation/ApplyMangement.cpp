@@ -30,7 +30,7 @@ void GetApplyCountUI::startInterface()
  */
 void GetApplyCountUI::getApplyCount()
 {
-	m_getApplyCount.getApplyCount();
+	m_get_apply_count.getApplyCount();
 }
 
 
@@ -47,7 +47,7 @@ void GetRecruitStatusUI::startInterface()
  */
 void GetRecruitStatusUI::getRecruitStatus()
 {
-	m_getRecruitStats.getRecruitStatus();
+	m_get_recruit_stats.getRecruitStatus();
 }
 
 
@@ -56,7 +56,7 @@ void GetRecruitStatusUI::getRecruitStatus()
  */
 void ShowApplyInfoUI::showApplyInfo()
 {
-	m_showApplyInfo.showApplyInfo();
+	m_show_apply_info.showApplyInfo();
 }
 
 
@@ -75,7 +75,7 @@ void ShowApplyInfoUI::startInterface()
  */
 void CancelApplyInfo::cancelApplcyInfo(int compNo)
 {
-	m_genMember.cancelApplyInfo(compNo);
+	m_gen_member.cancelApplyInfo(compNo);
 }
 
 /**
@@ -83,7 +83,7 @@ void CancelApplyInfo::cancelApplcyInfo(int compNo)
  */
 void GetApplyCount::getApplyCount()
 {
-	m_genMember.getDepartApplyCount();
+	m_gen_member.getDepartApplyCount();
 }
 
 /**
@@ -91,7 +91,7 @@ void GetApplyCount::getApplyCount()
  */
 void GetRecruitStatus::getRecruitStatus()
 {
-	m_compMember.getRecruitDepartInfo();
+	m_comp_member.getRecruitDepartInfo();
 }
 
 /**
@@ -99,5 +99,5 @@ void GetRecruitStatus::getRecruitStatus()
  */
 void ShowApplyInfo::showApplyInfo()
 {
-	m_genMember.showApplyInfo(out_fp);
+	m_gen_member.showApplyInfo(out_fp);
 }
