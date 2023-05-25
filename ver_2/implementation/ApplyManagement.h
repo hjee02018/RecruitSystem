@@ -19,7 +19,7 @@ class CancelApplyInfo
 private:
 	GenMember m_gen_member;
 public:
-	void cancelApplcyInfo(string comp_name, int comp_no, string depart_name);
+	void cancelApplcyInfo( int comp_no);
 };
 
 
@@ -65,7 +65,7 @@ private:
 	CancelApplyInfo m_cancel_apply_info;
 public:
 	void startInterface();
-	void cancelApplyInfo();
+	int cancelApplyInfo();
 };
 
 /**
