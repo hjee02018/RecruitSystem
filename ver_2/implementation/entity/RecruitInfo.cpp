@@ -1,5 +1,7 @@
 #include "RecruitInfo.h"
 
+
+
 /**
  * to return m_company_name
  *
@@ -11,9 +13,9 @@ string RecruitInfo::getCompanyName()
 }
 
 /**
- * to return m_business_number <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ì‘ì—…"
+ * to return m_business_number <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
  *
- * @return m_business_number- "ë°˜í™˜ê°’"
+ * @return m_business_number- "¹İÈ¯°ª"
  */
 int RecruitInfo::getBusinessNumber()
 {
@@ -21,9 +23,9 @@ int RecruitInfo::getBusinessNumber()
 }
 
 /**
- * to return m_task <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ì‘ì—…"
+ * to return m_task <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
  *
- * @return m_task- "ë°˜í™˜ê°’"
+ * @return m_task- "¹İÈ¯°ª"
  */
 string RecruitInfo::getTask()
 {
@@ -31,9 +33,9 @@ string RecruitInfo::getTask()
 }
 
 /**
- * to return m_num_of_people <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ì‘ì—…"
+ * to return m_num_of_people <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
  *
- * @return m_num_of_people- "ë°˜í™˜ê°’"
+ * @return m_num_of_people- "¹İÈ¯°ª"
  */
 int RecruitInfo::getNumOfPeople()
 {
@@ -41,9 +43,9 @@ int RecruitInfo::getNumOfPeople()
 }
 
 /**
- * to return m_deadline<- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ì‘ì—…"
+ * to return m_deadline<- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
  *
- * @return m_deadline- "ë°˜í™˜ê°’"
+ * @return m_deadline- "¹İÈ¯°ª"
  */
 time_t RecruitInfo::getDeadline()
 {
@@ -51,10 +53,10 @@ time_t RecruitInfo::getDeadline()
 }
 
 /**
- * add apply info to apply_info_collectionsk <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ì‘ì—…"
+ * add apply info to apply_info_collectionsk <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
  *
- * @param apply applying information. <- "ë§¤ê°œë³€ìˆ˜1"
- * @return void <- "ë°˜í™˜ê°’"
+ * @param apply applying information. <- "¸Å°³º¯¼ö1"
+ * @return void <- "¹İÈ¯°ª"
  */
 void RecruitInfo::addNewApply(ApplyInfo apply) {
     m_apply_info_collection.addApplyInfo(apply);
@@ -63,4 +65,25 @@ void RecruitInfo::setRecruitment(string task, int num_of_people, time_t deadline
     this->m_task = task;
     this->m_num_of_people = num_of_people;
     this->m_deadline = deadline;
+}
+
+
+/**
+ * to return num of apply
+ *
+ * @return m_num_of_apply
+ */
+int RecruitInfo::getRecruitCount()
+{
+	return m_num_of_apply;
+}
+
+/**
+ * to return name of department
+ *
+ * @return m_task
+ */
+string RecruitInfo::getDepartName()
+{
+	return m_task;
 }
