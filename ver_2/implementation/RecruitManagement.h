@@ -8,6 +8,7 @@
 #include "./entity/Member.h"
 #include "./entity/ApplyInfo.h"
 #include "./entity/ApplyInfoCollection.h"
+#include "MemberManagement.h"
 using namespace std;
 
 /**
@@ -68,7 +69,8 @@ public:
 class ShowRecruitmentList
 {
 public:
-    void showRecruitmentList(CompMember CompMember);
+    ShowRecruitmentList();
+    RecruitInfo showRecruitmentList(CompMember CompMember);
 };
 
 /**

@@ -108,7 +108,8 @@ void SearchUi::searchRecruitmentInfoByCompanyName(string company_name, FILE* out
 {
     
     Search search;
-    vector<RecruitInfo> recruit_infos = search.showRecruitmentInfoByCompanyName(company_name);
+    vector<RecruitInfo> recruit_infos;
+    recruit_infos.push_back(search.showRecruitmentInfoByCompanyName(company_name));
     
     fprintf(out_fp, "4.1. 채용 정보 검색\n");
     for(int i=0; i< recruit_infos.size(); i++)
@@ -138,7 +139,8 @@ void SearchUi::searchRecruitmentInfoByCompanyName(string company_name, FILE* out
  */
 RecruitInfo AddRecruitment::addNewRecruitment(CompMember compMember, string task, int num_of_people, time_t deadline)
 {
-    RecruitInfo recruitment(task, num_of_people, deadline);
+    RecruitInfo recruitment;
+    recruitment.setRecruitment(task, num_of_people, deadline);
     compMember.setRecruitment(task, num_of_people, deadline);
     return recruitment;
 }
@@ -200,7 +202,7 @@ RecruitInfo Search::showRecruitmentInfoByCompanyName(string company_name)
     for(int i =0; i<recruit_info_list.size(); i++){
         if(recruit_info_list[i].getCompanyName() == company_name)
         {
-            return recruit_info_dao[i];
+            return recruit_info_list[i];
         }
     }
     throw runtime_error("회사 이름과 일치하는 결과가 없습니다.");

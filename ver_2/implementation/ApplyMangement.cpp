@@ -1,18 +1,18 @@
-#include "ApplyMangement.h"
+#include "ApplyManagement.h"
 
 /**
- * Áö¿ø Ãë¼Ò ±â´É Ãâ·Â
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 void CancelApplyInfoUI::startInterface()
 {
-	cout << "4.4 Áö¿ø Ãë¼Ò" << endl;
+	cout << "4.4 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½" << endl;
 
 }
 
 /**
- * ÀÏ¹Ý È¸¿øÀÌ Ãë¼ÒÇÒ Áö¿ø Á¤º¸¸¦ ¼±ÅÃÇÏ¿© Ãë¼Ò ¿äÃ»
+ * ï¿½Ï¹ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
  * 
- * @ input ( params ) : Ãë¼Ò ÇÒ Áö¿ø Á¤º¸
+ * @ input ( params ) : ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 void CancelApplyInfoUI::cancelApplyInfo()
 {
@@ -24,15 +24,15 @@ void CancelApplyInfoUI::cancelApplyInfo()
 }
 
 /**
- * ¾÷¹«º° Áö¿ø È½¼ö Á¤º¸ Åë°è ±â´É Ãâ·Â
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 void GetApplyCountUI::startInterface()
 {
-	cout << "Áö¿ø È½¼ö Á¤º¸ Ãâ«r" << endl;
+	cout << "ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½r" << endl;
 }
 
 /**
- * Áö¿ø Á¤º¸ Åë°è ±â´É ¼±ÅÃ
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 void GetApplyCountUI::getApplyCount()
 {
@@ -41,16 +41,16 @@ void GetApplyCountUI::getApplyCount()
 
 
 /**
- * Ã¤¿ë Á¤º¸ Åë°è ±â´É ¼±ÅÃ
+ * Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 void GetRecruitStatusUI::startInterface()
 {
-	cout << "Áö¿øÀÚ Åë°è Á¤º¸ Ãâ·Â" << endl;
+	cout << "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½" << endl;
 }
 
 
 /**
- * Ã¤¿ë Á¤º¸ Åë°è ±â´É ¼±ÅÃ
+ * Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 void GetRecruitStatusUI::getRecruitStatus()
 {
@@ -59,7 +59,7 @@ void GetRecruitStatusUI::getRecruitStatus()
 
 
 /**
- * ÀÏ¹Ý È¸¿øÀÌ Áö¿ø Á¤º¸ ³»¿ª Á¶È¸ ±â´ÉÀ» »ç¿ëÇÏ°íÀÚÇÔ
+ * ï¿½Ï¹ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 void ShowApplyInfoUI::showApplyInfo()
 {
@@ -68,18 +68,18 @@ void ShowApplyInfoUI::showApplyInfo()
 
 
 /**
- * Áö¿ø Á¤º¸ ³»¿ª Á¶È¸ ±â´É Ãâ·Â
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 void ShowApplyInfoUI::startInterface()
 {
-	cout << "4.3 Áö¿ø Á¤º¸ Á¶È¸" << endl;
+	cout << "4.3 ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸" << endl;
 }
 
 
 /**
- * ÀÏ¹Ý È¸¿øÀÌ »èÁ¦ÇÏ°íÀÚ ÇÏ´Â Áö¿ø Á¤º¸¸¦ °¡Áö°í »èÁ¦ ¿äÃ»À» ¼öÇà
+ * ï¿½Ï¹ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  * 
- * @ input ( params ) : »èÁ¦ ÇÒ Áö¿ø Á¤º¸
+ * @ input ( params ) : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 void CancelApplyInfo::cancelApplcyInfo(string compName, int compNo, string departName)
 {
@@ -87,7 +87,7 @@ void CancelApplyInfo::cancelApplcyInfo(string compName, int compNo, string depar
 }
 
 /**
- * ÀÏ¹Ý È¸¿øÀÌ Áö¿øÇÑ Áö¿ø Á¤º¸ÀÇ ¾÷¹«º° Áö¿ø È½¼ö Åë°è È®ÀÎ
+ * ï¿½Ï¹ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½ï¿½ï¿½ È®ï¿½ï¿½
  */
 void GetApplyCount::getApplyCount()
 {
@@ -95,7 +95,7 @@ void GetApplyCount::getApplyCount()
 }
 
 /**
- * È¸»ç È¸¿øÀÌ µî·ÏÇÑ Ã¤¿ë Á¤º¸ ¿äÃ»
+ * È¸ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¤ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
  */
 void GetRecruitStatus::getRecruitStatus()
 {
@@ -103,7 +103,7 @@ void GetRecruitStatus::getRecruitStatus()
 }
 
 /**
- * ÀÏ¹Ý È¸¿øÀÇ ¸ðµç Áö¿ø Á¤º¸ Ãâ·Â
+ * ï¿½Ï¹ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 void ShowApplyInfo::showApplyInfo()
 {
@@ -111,19 +111,19 @@ void ShowApplyInfo::showApplyInfo()
 }
 
 /**
- * Áö¿ø Á¤º¸ Ãâ·Â(È¸»çÀÌ¸§, ¾÷¹«, ÀÎ¿ø¼ö, ½ÅÃ» ¸¶°¨ÀÏ)
+ * ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½(È¸ï¿½ï¿½ï¿½Ì¸ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½Î¿ï¿½ï¿½ï¿½, ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
  */
 void ApplyInfo::showInfo()
 {
-	cout << "[È¸»ç ÀÌ¸§ : " << m_companyName <<
-		" ¾÷¹« : " << m_departName <<
-		" ÀÎ¿ø¼ö : " << m_headCount <<
-		" ½ÅÃ» ¸¶°¨ÀÏ : " << m_endDate << "]" << endl;
+	cout << "[È¸ï¿½ï¿½ ï¿½Ì¸ï¿½ : " << m_companyName <<
+		" ï¿½ï¿½ï¿½ï¿½ : " << m_departName <<
+		" ï¿½Î¿ï¿½ï¿½ï¿½ : " << m_headCount <<
+		" ï¿½ï¿½Ã» ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : " << m_endDate << "]" << endl;
 }
 
 
 /**
- * È¸»çÈ¸¿øÀÇ ¾÷¹«º° Áö¿øÀÚ È½¼ö Á¤º¸ Ãâ·Â
+ * È¸ï¿½ï¿½È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
  */
 void CompMember::getRecruitDepartInfo()
 {
@@ -138,12 +138,12 @@ void CompMember::getRecruitDepartInfo()
 				applyMap[it->getDepartName()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		cout << "¾÷¹« : " << iter->first << " Áö¿øÀÚ¼ö : " << iter->second << endl;
+		cout << "ï¿½ï¿½ï¿½ï¿½ : " << iter->first << " ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ : " << iter->second << endl;
 }
 
 
 /**
- * m_applyListÀÇ ApplyInfo¸¦ ¸ðµÎ º¸¿©ÁÜ
+ * m_applyListï¿½ï¿½ ApplyInfoï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  *
  */
 void GenMember::showApplyInfo()
@@ -154,9 +154,9 @@ void GenMember::showApplyInfo()
 }
 
 /**
- * m_applyListÀÇ ApplyInfo »èÁ¦(Áö¿ø Ãë¼Ò ±â´É)
+ * m_applyListï¿½ï¿½ ApplyInfo ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½)
  *
- * @ input ( params ) : »èÁ¦ ÇÒ Áö¿ø Á¤º¸
+ * @ input ( params ) : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
  */
 void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
 {
@@ -170,7 +170,7 @@ void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
 }
 
 /**
- * m_applyListÀÇ departNameº° count Ãâ·Â
+ * m_applyListï¿½ï¿½ departNameï¿½ï¿½ count ï¿½ï¿½ï¿½
  *
  */
 void GenMember::getDepartApplyCount()
@@ -186,7 +186,7 @@ void GenMember::getDepartApplyCount()
 				applyMap[it->getDepart()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		cout << "¾÷¹« : " << iter->first << " Áö¿øÈ½¼ö : " << iter->second << endl;
+		cout << "ï¿½ï¿½ï¿½ï¿½ : " << iter->first << " ï¿½ï¿½ï¿½ï¿½È½ï¿½ï¿½ : " << iter->second << endl;
 }
 
 
