@@ -74,7 +74,7 @@ bool Member::checkValidation(const string* id, const string* pw) {
  * @throws nothing
 */
 void Member::toDeleteMemberAuth(string* id) {
-	strcpy_s(id, MAX_STRING, memId);
+	strcpy_s(id, MAX_STRING, mem_id);
 }
 
 /**

@@ -11,7 +11,9 @@ using namespace std;
 #define MAX_STRING 32
 #define MAX_ACCOUNT 100
 
-
+/**
+ * 지원 취소 인터페이스를 시작하고 일반회원의 지원 취소 기능을 수행
+ */
 class CancelApplyInfo
 {
 private:
@@ -20,6 +22,10 @@ public:
 	void cancelApplcyInfo(string comp_name, int comp_no, string depart_name);
 };
 
+
+/**
+ * 일반회원의 지원 횟수 통계 제공
+ */
 class GetApplyCount
 {
 private:
@@ -28,6 +34,9 @@ public:
 	void getApplyCount();
 };
 
+/**
+ * 회사 회원의 채용 통계 제공
+ */
 class GetRecruitStatus
 {
 private:
@@ -36,6 +45,9 @@ public:
 	void getRecruitStatus();
 };
 
+/**
+ * 일반 회원의 지원 정보 조회
+ */
 class ShowApplyInfo
 {
 private:
@@ -44,6 +56,9 @@ public:
 	void showApplyInfo();
 };
 
+/**
+ * 지원 취소 인터페이스
+ */
 class CancelApplyInfoUI
 {
 private:
@@ -53,6 +68,9 @@ public:
 	void cancelApplyInfo();
 };
 
+/**
+ * 지원 횟수 통계 인터페이스
+ */
 class GetApplyCountUI
 {
 private:
@@ -62,6 +80,9 @@ public:
 	void getApplyCount();
 };
 
+/**
+ * 지원 조회 인터페이스
+ */
 class ShowApplyInfoUI
 {
 private:
@@ -71,7 +92,9 @@ public:
 	void startInterface();
 };
 
-
+/**
+ * 채용 통계 인터페이스
+ */
 class GetRecruitStatusUI
 {
 private:
