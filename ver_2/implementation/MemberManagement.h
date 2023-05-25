@@ -6,7 +6,6 @@
 #include "./entity/Member.h"
 using namespace std;
 
-FILE* in_fp, * out_fp;
 
 #define MAX_STRING 32
 #define MAX_ACCOUNT 100
@@ -14,10 +13,10 @@ FILE* in_fp, * out_fp;
 #define OUTPUT_FILE_NAME "output.txt"
 Member mem[MAX_ACCOUNT];
 CompMember comp[MAX_ACCOUNT];
-int numComp = 0;
+int num_comp = 0;
 GenMember gen[MAX_ACCOUNT];
 int num_gen = 0;
-string User[MAX_STRING + 1] = "";
+string User[MAX_STRING + 1];
 int now_idx; 
 
 /**

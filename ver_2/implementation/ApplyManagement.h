@@ -19,7 +19,7 @@ FILE* in_fp, * out_fp;
 class CancelApplyInfo
 {
 private:
-	GenMember m_genMember;
+	GenMember m_gen_member;
 public:
 	void cancelApplcyInfo(string compName, int compNo, string departName);
 };
@@ -27,7 +27,7 @@ public:
 class GetApplyCount
 {
 private:
-	GenMember m_genMember;
+	GenMember m_gen_member;
 public:
 	void getApplyCount();
 };
@@ -35,7 +35,7 @@ public:
 class GetRecruitStatus
 {
 private:
-	CompMember m_compMember;
+	CompMember m_comp_member;
 public:
 	void getRecruitStatus();
 };
@@ -43,7 +43,7 @@ public:
 class ShowApplyInfo
 {
 private:
-	GenMember m_genMember;
+	GenMember m_gen_member;
 public:
 	void showApplyInfo();
 };
@@ -51,7 +51,7 @@ public:
 class CancelApplyInfoUI
 {
 private:
-	CancelApplyInfo m_cancelApplyInfo;
+	CancelApplyInfo m_cancel_apply_info;
 public:
 	void startInterface();
 	void cancelApplyInfo();
@@ -60,7 +60,7 @@ public:
 class GetApplyCountUI
 {
 private:
-	GetApplyCount m_getApplyCount;
+	GetApplyCount m_get_apply_count;
 public:
 	void startInterface();
 	void getApplyCount();
@@ -69,7 +69,7 @@ public:
 class ShowApplyInfoUI
 {
 private:
-	ShowApplyInfo m_showApplyInfo;
+	ShowApplyInfo m_show_apply_info;
 public:
 	void showApplyInfo();
 	void startInterface();
@@ -79,7 +79,7 @@ public:
 class GetRecruitStatusUI
 {
 private:
-	GetRecruitStatus m_getRecruitStats;
+	GetRecruitStatus m_get_recruit_stats;
 public:
 	void startInterface();
 	void getRecruitStatus();
