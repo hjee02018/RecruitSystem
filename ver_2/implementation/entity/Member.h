@@ -66,6 +66,7 @@ class CompMember : public Member
 private:
 	string m_company_name;
 	string m_business_num;
+	RecruitInfo m_recruitment;
 	list< RecruitInfo > m_recruit_list; // RecruitInfo include
 
 public:
