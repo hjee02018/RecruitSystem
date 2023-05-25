@@ -18,10 +18,10 @@ using namespace std;
 * @return nothing
 * @throws nothing
 */
-void Member::addNewGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(mem_id, MAX_STRING + 1, id);
-	strcpy_s(mem_pw, MAX_STRING + 1, pw);
-	is_member = 1;
+void Member::addNewGeneralMember(const string name, const string num, const string id, const string pw) {
+	this->mem_id=id;
+	this->mem_pw=pw;
+	this->is_member = 1;
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (gen[i].is_gen == 0) {
 			gen[i].createGeneralMember(name, num, id, pw);
@@ -39,10 +39,10 @@ void Member::addNewGeneralMember(const string* name, const string* num, const st
  * @return nothing
  * @throws nothing
 */
-void Member::addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(mem_id, MAX_STRING + 1, id);
-	strcpy_s(mem_pw, MAX_STRING + 1, pw);
-	is_member = 1;
+void Member::addNewCompanyMember(const string name, const string num, const string id, const string pw) {
+	this->mem_id=id;
+	this->mem_pw=pw;
+	this->is_member = 1;
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (comp[i].is_comp == 0) {
 			comp[i].createCompanyMember(name, num, id, pw);
@@ -59,8 +59,8 @@ void Member::addNewCompanyMember(const string* name, const string* num, const st
  * @return boolean : 일치하면 1, 불일치하면 0
  * @throws 불일치할 경우 로그인 불가
 */
-bool Member::checkValidation(const string* id, const string* pw) {
-	if (strcmp(mem_id, id) == 0 && strcmp(mem_pw, pw) == 0) {
+bool Member::checkValidation(const string id, const string pw) {
+	if (mem_id==id && mem_pw==pw) {
 		return 1;
 	}
 	else return 0;
@@ -73,8 +73,8 @@ bool Member::checkValidation(const string* id, const string* pw) {
  * @return nothing
  * @throws nothing
 */
-void Member::toDeleteMemberAuth(string* id) {
-	strcpy_s(id, MAX_STRING, mem_id);
+void Member::toDeleteMemberAuth(string id) {
+	id=this->mem_id;
 }
 
 /**
@@ -84,8 +84,8 @@ void Member::toDeleteMemberAuth(string* id) {
  * @return nothing
  * @throws nothing
 */
-void Member::toLogout(string* id) {
-	strcpy_s(id, MAX_STRING, mem_id);
+void Member::toLogout(string id) {
+	id=this->mem_id;
 }
 
 /**
@@ -98,13 +98,12 @@ void Member::toLogout(string* id) {
  * @return nothing
  * @throws nothing
 */
-void GenMember::createGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(m_gen_name, MAX_STRING + 1, name);
-	strcpy_s(m_social_num, MAX_STRING + 1, num);
-	strcpy_s(mem_id, MAX_STRING + 1, id);
-	strcpy_s(mem_pw, MAX_STRING + 1, pw);
-
-	is_gen = 1;
+void GenMember::createGeneralMember(const string name, const string num, const string id, const string pw) {
+	this->m_gen_name=name;
+	this->m_social_num=num;
+	this->mem_id=id;
+	this->mem_pw=pw;
+	this->is_gen = 1;
 }
 
 /**
@@ -117,16 +116,15 @@ void GenMember::createGeneralMember(const string* name, const string* num, const
  * @return nothing
  * @return nothing
 */
-void CompMember::createCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(m_company_name, MAX_STRING + 1, name);
-	strcpy_s(m_business_num, MAX_STRING + 1, num);
-	strcpy_s(mem_id, MAX_STRING + 1, id);
-	strcpy_s(mem_pw, MAX_STRING + 1, pw);
-
-	is_comp = 1;
+void CompMember::createCompanyMember(const string name, const string num, const string id, const string pw) {
+	this->m_company_name=name;
+	this->m_business_num=num;
+	this->mem_id=id;
+	this->mem_pw=pw;
+	this->is_comp = 1;
 }
 void CompMember::setRecruitment(string task, int num_of_people, time_t deadline) {
-	recruitment.setRecruitment(task, num_of_people, deadline);
+	m_recruitment.setRecruitment(task, num_of_people, deadline);
 }
 
 void GenMember::addApply(ApplyInfo apply)
