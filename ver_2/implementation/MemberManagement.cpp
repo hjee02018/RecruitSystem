@@ -206,7 +206,7 @@ void Logout::tryLogout() {
 }
 
 /**
- * ȸ��ȸ���� ������ ������ Ƚ�� ���� ���
+ * 회사회원이 등록한 채용 정보의 업무별 지원자수 출력
  */
 void CompMember::getRecruitDepartInfo()
 {
@@ -221,12 +221,13 @@ void CompMember::getRecruitDepartInfo()
 				applyMap[it->getDepartName()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		cout << "���� : " << iter->first << " �����ڼ� : " << iter->second << endl;
+		fprintf(out_fp, "%s %d \n", iter->first.c_str(),iter->second);
+
 }
 
 
 /**
- * m_applyList�� ApplyInfo�� ��� ������
+ * 일반 회원의 모든 지원 정보 출력
  *
  */
 void GenMember::showApplyInfo()
@@ -237,9 +238,9 @@ void GenMember::showApplyInfo()
 }
 
 /**
- * m_applyList�� ApplyInfo ����(���� ��� ���)
+ *일반회원이 지원을 취소
  *
- * @ input ( params ) : ���� �� ���� ����
+ * @ input ( params ) : 취소할 지원 정보
  */
 void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
 {
@@ -253,7 +254,7 @@ void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
 }
 
 /**
- * m_applyList�� departName�� count ���
+ * 일반 회원이 지원한 지원 정보의 업무별 지원횟수 출력
  *
  */
 void GenMember::getDepartApplyCount()
@@ -269,5 +270,5 @@ void GenMember::getDepartApplyCount()
 				applyMap[it->getDepart()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		cout << "���� : " << iter->first << " ����Ƚ�� : " << iter->second << endl;
+		fprintf(out_fp, "%s %d \n", iter->first.c_str(),iter->second);
 }
