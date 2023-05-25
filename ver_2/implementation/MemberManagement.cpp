@@ -234,7 +234,9 @@ void GenMember::showApplyInfo()
 {
 	list<ApplyInfo>::iterator it;
 	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		it->showInfo();
+		fprintf(out_fp, "%s %d %s %d %s \n", it->getCompany().c_str(),it->getNumber().c_str()
+			,it->getDepart().c_str()
+			,it->getCount().c_str(),it->getDeadline().c_str() );
 }
 
 /**
