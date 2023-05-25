@@ -187,5 +187,5 @@ void doTask()
 
 void program_exit()
 {
-    fscanf_s( out_fp,"6.1. 종료\n");
+    fprintf_s( out_fp,"6.1. 종료\n");
 }
