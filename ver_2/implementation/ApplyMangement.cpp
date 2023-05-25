@@ -11,13 +11,11 @@ void CancelApplyInfoUI::startInterface()
  * 지원 취소 기능을 수행
  * 
  */
-void CancelApplyInfoUI::cancelApplyInfo()
+int CancelApplyInfoUI::cancelApplyInfo()
 {
-	string compName;
-	int compNo;
-	string departName;
-	cin >> compName >> compNo >> departName;
-	m_cancelApplyInfo.cancelApplcyInfo(compName, compNo, departName);
+	int ret;
+	fscanf_s(in_fp, "%d", ret);
+	return ret;
 }
 
 /**
@@ -75,9 +73,9 @@ void ShowApplyInfoUI::startInterface()
  * 
  * @ input ( params ) : 취소할 지원 정보
  */
-void CancelApplyInfo::cancelApplcyInfo(string compName, int compNo, string departName)
+void CancelApplyInfo::cancelApplcyInfo(int compNo)
 {
-	m_genMember.cancelApplyInfo(compName, compNo, departName);
+	m_genMember.cancelApplyInfo(compNo);
 }
 
 /**
