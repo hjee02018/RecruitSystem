@@ -145,4 +145,5 @@ void doTask()
 
 void program_exit()
 {
+    fscanf_s("6.1. 종료\n");
 }
