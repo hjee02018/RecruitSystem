@@ -51,10 +51,10 @@ void AddMember::addMember() {
 	AddMemberUI addmemberui;
 	addmemberui.createNewMember();
 
-	if (addmemberui.inputType == 1) {
+	if (addmemberui.input_type == 1) {
 		addNewCompanyMember(addmemberui.input_name, addmemberui.input_num, addmemberui.input_id, addmemberui.input_pw);
 	}
-	else if (addmemberui.inputType == 2) {
+	else if (addmemberui.input_type == 2) {
 		addNewGeneralMember(addmemberui.input_name, addmemberui.input_num, addmemberui.input_id, addmemberui.input_pw);
 	}
 	addmemberui.startInterface();
@@ -72,9 +72,9 @@ void AddMember::addMember() {
 */
 void AddMember::addNewGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
-		if (mem[i].isMember == 0) {
+		if (mem[i].is_member == 0) {
 			mem[i].addNewGeneralMember(name, num, id, pw);
-			numGen++;
+			num_gen++;
 			break;
 		}
 	}
@@ -92,9 +92,9 @@ void AddMember::addNewGeneralMember(const string* name, const string* num, const
 */
 void AddMember::addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
-		if (mem[i].isMember == 0) {
+		if (mem[i].is_member == 0) {
 			mem[i].addNewCompanyMember(name, num, id, pw);
-			numComp++;
+			num_comp++;
 			break;
 		}
 	}

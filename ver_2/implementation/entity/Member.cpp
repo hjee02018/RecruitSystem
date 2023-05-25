@@ -19,11 +19,11 @@ using namespace std;
 * @throws nothing
 */
 void Member::addNewGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(memId, MAX_STRING + 1, id);
-	strcpy_s(memPw, MAX_STRING + 1, pw);
-	isMember = 1;
+	strcpy_s(mem_id, MAX_STRING + 1, id);
+	strcpy_s(mem_pw, MAX_STRING + 1, pw);
+	is_member = 1;
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
-		if (gen[i].isGen == 0) {
+		if (gen[i].is_gen == 0) {
 			gen[i].createGeneralMember(name, num, id, pw);
 			break;
 		}
@@ -40,11 +40,11 @@ void Member::addNewGeneralMember(const string* name, const string* num, const st
  * @throws nothing
 */
 void Member::addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(memId, MAX_STRING + 1, id);
-	strcpy_s(memPw, MAX_STRING + 1, pw);
-	isMember = 1;
+	strcpy_s(mem_id, MAX_STRING + 1, id);
+	strcpy_s(mem_pw, MAX_STRING + 1, pw);
+	is_member = 1;
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
-		if (comp[i].isComp == 0) {
+		if (comp[i].is_comp == 0) {
 			comp[i].createCompanyMember(name, num, id, pw);
 			break;
 		}
@@ -60,7 +60,7 @@ void Member::addNewCompanyMember(const string* name, const string* num, const st
  * @throws 불일치할 경우 로그인 불가
 */
 bool Member::checkValidation(const string* id, const string* pw) {
-	if (strcmp(memId, id) == 0 && strcmp(memPw, pw) == 0) {
+	if (strcmp(mem_id, id) == 0 && strcmp(mem_pw, pw) == 0) {
 		return 1;
 	}
 	else return 0;
@@ -85,7 +85,7 @@ void Member::toDeleteMemberAuth(string* id) {
  * @throws nothing
 */
 void Member::toLogout(string* id) {
-	strcpy_s(id, MAX_STRING, memId);
+	strcpy_s(id, MAX_STRING, mem_id);
 }
 
 /**
@@ -99,12 +99,12 @@ void Member::toLogout(string* id) {
  * @throws nothing
 */
 void GenMember::createGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(genName, MAX_STRING + 1, name);
-	strcpy_s(socialNum, MAX_STRING + 1, num);
-	strcpy_s(memId, MAX_STRING + 1, id);
-	strcpy_s(memPw, MAX_STRING + 1, pw);
+	strcpy_s(m_gen_name, MAX_STRING + 1, name);
+	strcpy_s(m_social_num, MAX_STRING + 1, num);
+	strcpy_s(mem_id, MAX_STRING + 1, id);
+	strcpy_s(mem_pw, MAX_STRING + 1, pw);
 
-	isGen = 1;
+	is_gen = 1;
 }
 
 /**
@@ -118,12 +118,12 @@ void GenMember::createGeneralMember(const string* name, const string* num, const
  * @return nothing
 */
 void CompMember::createCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
-	strcpy_s(companyName, MAX_STRING + 1, name);
-	strcpy_s(businessNum, MAX_STRING + 1, num);
-	strcpy_s(memId, MAX_STRING + 1, id);
-	strcpy_s(memPw, MAX_STRING + 1, pw);
+	strcpy_s(m_company_name, MAX_STRING + 1, name);
+	strcpy_s(m_business_num, MAX_STRING + 1, num);
+	strcpy_s(mem_id, MAX_STRING + 1, id);
+	strcpy_s(mem_pw, MAX_STRING + 1, pw);
 
-	isComp = 1;
+	is_comp = 1;
 }
 void CompMember::setRecruitment(string task, int num_of_people, time_t deadline) {
 	recruitment.setRecruitment(task, num_of_people, deadline);
