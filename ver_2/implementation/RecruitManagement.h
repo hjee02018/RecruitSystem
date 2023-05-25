@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include "RecruitInfo.h"
 #include "CompMember.h"
 #include "ApplyInfo.h"
