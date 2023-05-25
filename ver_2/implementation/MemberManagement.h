@@ -3,7 +3,7 @@
 #include<string.h>
 #include<fstream>
 #include <list>
-#include "Member.h"
+#include "./entity/Member.h"
 using namespace std;
 
 FILE* in_fp, * out_fp;

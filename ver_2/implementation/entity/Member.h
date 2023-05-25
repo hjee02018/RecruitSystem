@@ -3,6 +3,8 @@
 #include<string.h>
 #include<fstream>
 #include <list>
+#include "RecruitInfo.h"
+#include "ApplyInfo.h"
 using namespace std;
 
 #define MAX_STRING 32

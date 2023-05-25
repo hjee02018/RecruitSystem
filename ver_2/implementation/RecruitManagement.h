@@ -4,10 +4,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "RecruitInfo.h"
-#include "CompMember.h"
-#include "ApplyInfo.h"
-#include "ApplyInfoCollection.h"
+#include "./entity/RecruitInfo.h"
+#include "./entity/Member.h"
+#include "./entity/ApplyInfo.h"
+#include "./entity/ApplyInfoCollection.h"
 using namespace std;
 
 /**

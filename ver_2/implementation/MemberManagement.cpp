@@ -11,7 +11,7 @@ CompMember comp[MAX_ACCOUNT];
 int numComp = 0;
 GenMember gen[MAX_ACCOUNT];
 int numGen = 0;
-string User[MAX_STRING + 1] = ""
+string User[MAX_STRING + 1] = "";
 int now_idx; 
 
 /**
