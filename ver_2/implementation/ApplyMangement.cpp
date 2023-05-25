@@ -5,8 +5,6 @@
  */
 void CancelApplyInfoUI::startInterface()
 {
-	cout << "4.4 ���� ���" << endl;
-
 }
 
 /**
@@ -28,7 +26,6 @@ void CancelApplyInfoUI::cancelApplyInfo()
  */
 void GetApplyCountUI::startInterface()
 {
-	cout << "���� Ƚ�� ���� ��r" << endl;
 }
 
 /**
@@ -45,7 +42,6 @@ void GetApplyCountUI::getApplyCount()
  */
 void GetRecruitStatusUI::startInterface()
 {
-	cout << "������ ��� ���� ���" << endl;
 }
 
 
@@ -72,7 +68,6 @@ void ShowApplyInfoUI::showApplyInfo()
  */
 void ShowApplyInfoUI::startInterface()
 {
-	cout << "4.3 ���� ���� ��ȸ" << endl;
 }
 
 
@@ -107,19 +102,9 @@ void GetRecruitStatus::getRecruitStatus()
  */
 void ShowApplyInfo::showApplyInfo()
 {
-	m_genMember.showApplyInfo();
+	m_genMember.showApplyInfo(out_fp);
 }
 
-/**
- * ���� ���� ���(ȸ���̸�, ����, �ο���, ��û ������)
- */
-void ApplyInfo::showInfo()
-{
-	cout << "[ȸ�� �̸� : " << m_companyName <<
-		" ���� : " << m_departName <<
-		" �ο��� : " << m_headCount <<
-		" ��û ������ : " << m_endDate << "]" << endl;
-}
 
 
 /**
@@ -130,7 +115,7 @@ void CompMember::getRecruitDepartInfo()
 	list<RecruitInfo>::iterator it;
 	map<string, int> applyMap;
 	map<string, int>::iterator iter;
-	for (it = m_recruitlist.begin(); it != m_recruitlist.end(); it++)
+	for (it = m_recruit_list.begin(); it != m_recruit_list.end(); it++)
 		for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
 			if (iter->first == it->getDepartName())
 				iter->second++;
@@ -138,7 +123,7 @@ void CompMember::getRecruitDepartInfo()
 				applyMap[it->getDepartName()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		cout << "���� : " << iter->first << " �����ڼ� : " << iter->second << endl;
+		fprintf(out_fp, "%s %d\n", iter->first.c_str(), iter->second);
 }
 
 
@@ -146,11 +131,11 @@ void CompMember::getRecruitDepartInfo()
  * m_applyList�� ApplyInfo�� ��� ������
  *
  */
-void GenMember::showApplyInfo()
+void GenMember::showApplyInfo(FILE *out_fp)
 {
 	list<ApplyInfo>::iterator it;
-	for (it = m_applyList.begin(); it != m_applyList.end(); it++)
-		it->showInfo();
+	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
+		it->showInfo(out_fp);
 }
 
 /**
@@ -162,11 +147,11 @@ void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
 {
 	list<ApplyInfo>::iterator it;
 	int i = 0;
-	for (it = m_applyList.begin(); it != m_applyList.end(); it++)
+	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
 		if (it->getDepart() == departName)
 			it->~ApplyInfo();
 	
-	m_applyList.erase(it);
+	m_apply_list.erase(it);
 }
 
 /**
@@ -178,7 +163,7 @@ void GenMember::getDepartApplyCount()
 	list<ApplyInfo>::iterator it;
 	map<string, int> applyMap;
 	map<string, int>::iterator iter;
-	for (it = m_applyList.begin(); it != m_applyList.end(); it++)
+	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
 		for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
 			if (iter->first == it->getDepart())
 				iter->second++;
@@ -186,26 +171,7 @@ void GenMember::getDepartApplyCount()
 				applyMap[it->getDepart()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		cout << "���� : " << iter->first << " ����Ƚ�� : " << iter->second << endl;
+		fprintf(out_fp, "%s %d\n", iter->first.c_str(), iter->second);
 }
 
 
-/**
- * to return num of apply
- *
- * @return m_numOfApply
- */
-int RecruitInfo::getRecruitCount()
-{
-	return m_numOfApply;
-}
-
-/**
- * to return name of department
- *
- * @return m_departName
- */
-string RecruitInfo::getDepartName()
-{
-	return m_departName;
-}
