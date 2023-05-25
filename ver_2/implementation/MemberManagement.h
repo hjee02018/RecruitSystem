@@ -52,7 +52,7 @@ public:
 */
 class LoginUI {
 public:
-	string input_d[MAX_STRING];
+	string input_id[MAX_STRING];
 	string input_pw[MAX_STRING];
 	void tryLogin();
 	void startInterface();

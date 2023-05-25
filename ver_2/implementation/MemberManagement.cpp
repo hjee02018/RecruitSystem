@@ -26,8 +26,8 @@ RecruitInfo CompMember::getRecruitment()
  * @throws nothing
 */
 void AddMemberUI::createNewMember() {
-	fscanf_s(in_fp, "%d %s %s %s %s", inputType, sizeof(inputType), inputName, sizeof(inputName),
-		inputNum, sizeof(inputNum), inputId, sizeof(inputId), inputPw, sizeof(inputPw));
+	fscanf_s(in_fp, "%d %s %s %s %s", input_type, sizeof(input_type), input_name, sizeof(input_name),
+		input_num, sizeof(input_num), input_id, sizeof(input_id), input_pw, sizeof(input_pw));
 }
 
 /**
@@ -38,7 +38,7 @@ void AddMemberUI::createNewMember() {
 */
 void AddMemberUI::startInterface() {
 	fprintf_s(out_fp, "1.1. 회원가입\n");
-	fprintf_s(out_fp, ">  %d %s %s %s %s\n", inputType, inputName, inputNum, inputId, inputPw);
+	fprintf_s(out_fp, ">  %d %s %s %s %s\n", input_type, input_name, input_num, input_id, input_pw);
 }
 
 /**
@@ -52,10 +52,10 @@ void AddMember::addMember() {
 	addmemberui.createNewMember();
 
 	if (addmemberui.inputType == 1) {
-		addNewCompanyMember(addmemberui.inputName, addmemberui.inputNum, addmemberui.inputId, addmemberui.inputPw);
+		addNewCompanyMember(addmemberui.input_name, addmemberui.input_num, addmemberui.input_id, addmemberui.input_pw);
 	}
 	else if (addmemberui.inputType == 2) {
-		addNewGeneralMember(addmemberui.inputName, addmemberui.inputNum, addmemberui.inputId, addmemberui.inputPw);
+		addNewGeneralMember(addmemberui.input_name, addmemberui.input_num, addmemberui.input_id, addmemberui.input_pw);
 	}
 	addmemberui.startInterface();
 }
@@ -107,7 +107,7 @@ void AddMember::addNewCompanyMember(const string* name, const string* num, const
  * @throws nothing
 */
 void LoginUI::tryLogin() {
-	fscanf_s(in_fp, "%s %s", inputId, sizeof(inputId), inputPw, sizeof(inputPw));
+	fscanf_s(in_fp, "%s %s", input_id, sizeof(input_id), input_pw, sizeof(input_pw));
 }
 
 /**
@@ -118,7 +118,7 @@ void LoginUI::tryLogin() {
 */
 void LoginUI::startInterface() {
 	fprintf_s(out_fp, "2.1. 로그인\n");
-	fprintf_s(out_fp, "> %s %s\n", inputId, inputPw);
+	fprintf_s(out_fp, "> %s %s\n", input_id, input_pw);
 }
 
 /**
@@ -131,8 +131,8 @@ void Login::tryLogin() {
 	LoginUI loginui;
 	loginui.tryLogin();
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
-		if (mem[i].checkValidation(loginui.inputId, loginui.inputPw) == 1) {
-			strcpy_s(User, MAX_STRING + 1, loginui.inputId);
+		if (mem[i].checkValidation(loginui.input_id, loginui.input_pw) == 1) {
+			strcpy_s(User, MAX_STRING + 1, loginui.input_id);
 			now_idx = i;
 			loginui.startInterface();
 			break;
