@@ -244,15 +244,15 @@ void GenMember::showApplyInfo()
  *
  * @ input ( params ) : 취소할 지원 정보
  */
-void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
+void GenMember::cancelApplyInfo(int compNo)
 {
 	list<ApplyInfo>::iterator it;
 	int i = 0;
 	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		if (it->getDepart() == departName)
+		if (it->getNumber() == compNo)
 			it->~ApplyInfo();
 
-	m_applyList.erase(it);
+	m_apply_list.erase(it);
 }
 
 /**
