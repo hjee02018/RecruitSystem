@@ -46,8 +46,6 @@ class GenMember : public Member
 private:
 	string m_gen_name[MAX_STRING + 1];
 	string m_social_num[MAX_STRING + 1];
-	ApplyInfo m_apply;
-
 	list< ApplyInfo > m_apply_list; // ApplyInfo include
 
 public:
@@ -57,6 +55,7 @@ public:
 	void showApplyInfo();
 	void cancelApplyInfo(string comp_name, int comp_no, string depart_name);
 	void getDepartApplyCount();
+	void addApply(ApplyInfo apply);
 };
 
 /**

@@ -128,3 +128,8 @@ void CompMember::createCompanyMember(const string* name, const string* num, cons
 void CompMember::setRecruitment(string task, int num_of_people, time_t deadline) {
 	recruitment.setRecruitment(task, num_of_people, deadline);
 }
+
+void GenMember::addApply(ApplyInfo apply)
+{
+	m_apply_list.push_back(apply);
+}

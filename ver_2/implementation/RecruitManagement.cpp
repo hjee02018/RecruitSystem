@@ -165,7 +165,7 @@ ApplyInfo ApplyCompany::applyCompany(int business_number)
     for(int i=0; i<numComp; i++){
         recruit_info_list.push_back(comp[i].getRecruitment());
     }
-
+    
     for(int i=0; i< recruit_info_list.size(); i++)
     {
         if(recruit_info_list[i].getBusinessNumber() == business_number)
@@ -175,6 +175,7 @@ ApplyInfo ApplyCompany::applyCompany(int business_number)
             string task = recruit_info_list[i].getTask();
             
             ApplyInfo applyInfo(company_name, business_number, task);
+            gen[now_idx].addApply(applyInfo);
             recruit_info_list[i].addNewApply(applyInfo);
             return applyInfo;
         }
