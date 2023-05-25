@@ -12,7 +12,13 @@ FILE* in_fp, * out_fp;
 #define MAX_ACCOUNT 100
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
-
+Member mem[MAX_ACCOUNT];
+CompMember comp[MAX_ACCOUNT];
+int numComp = 0;
+GenMember gen[MAX_ACCOUNT];
+int numGen = 0;
+string User[MAX_STRING + 1] = "";
+int now_idx; 
 
 /**
  * 회원가입 관련 boundary class

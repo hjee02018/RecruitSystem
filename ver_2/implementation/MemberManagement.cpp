@@ -1,18 +1,12 @@
 #include "MemberManagement.h"
-#include "ApplyMangement.h"
+#include "ApplyManagement.h"
 
 #include<iostream>
 #include<fstream>
 #include<string.h>
 using namespace std;
 
-Member mem[MAX_ACCOUNT];
-CompMember comp[MAX_ACCOUNT];
-int numComp = 0;
-GenMember gen[MAX_ACCOUNT];
-int numGen = 0;
-string User[MAX_STRING + 1] = "";
-int now_idx; 
+
 
 /**
  * 회사 회원이 등록한 채용 정보 목록 반환

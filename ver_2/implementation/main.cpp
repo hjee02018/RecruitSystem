@@ -5,7 +5,10 @@
 #include "MemberManagement.h"
 #include "RecruitManagement.h"
 #include "ApplyManagement.h"
-
+#include "./entity/ApplyInfo.h"
+#include "./entity/RecruitInfo.h"
+#include "./entity/Member.h"
+#include "./entity/ApplyInfoCollection.h"
 
 // 상수 선언
 #define INPUT_FILE_NAME "input.txt"
@@ -25,11 +28,7 @@ int main()
   FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
   FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
-  ...
-
   doTask();
-
-  ...
 
   return 0;
 }
@@ -88,21 +87,22 @@ void doTask()
             }
             case 3:
             {
-                switch(menu_level_2)
-                case 1:
-                {
-                    AddRecruitmentUi addRecruitmentUi;
-                    string task;
-                    int num_of_people;
-                    time_t deadline;
-                    addRecruitmentUi.startInterface(task,num_of_people,deadline,in_fp);
-                    addRecruitmentUi.createNewRecruitment(compMember,task,num_of_people,deadline);
-                    break;
-                }
-                case 2:
-                {
+                switch(menu_level_2){
+                    case 1:
+                    {
+                        AddRecruitmentUi addRecruitmentUi;
+                        string task;
+                        int num_of_people;
+                        time_t deadline;
+                        addRecruitmentUi.startInterface(task,num_of_people,deadline,in_fp);
+                        addRecruitmentUi.createNewRecruitment(comp[now_idx],task,num_of_people,deadline,out_fp);
+                        break;
+                    }
+                    case 2:
+                    {
                     RecruitmentListUi recruitmentListUi;
-                    recruitmentListUi.selectRecruitmentList(compMember,out_fp);
+                    recruitmentListUi.selectRecruitmentList(comp[now_idx],out_fp);
+                    }
                 }
             }
             case 4:
@@ -143,30 +143,6 @@ void doTask()
 }
 
 
-void join()
-{
-  /*            !!!!!!!       중요        !!!!!!!!!
-   * 단순히 파일을 통해 입출력하는 방법을 보이기 위한 코드이므로 이 함수에서 그대로 사용하면 안됨.
-   * control 및 boundary class를 이용해서 해당 기능이 구현되도록 해야 함.
-   */
-
-   char user_type[MAX_STRING], name[MAX_STRING], SSN[[MAX_STRING],
-        address[MAX_STRING], ID[MAX_STRING], password[MAX_STRING];
-
-   // 입력 형식 : 이름, 주민번호, ID, Password를 파일로부터 읽음
-   fscanf(in_fp, "%s %s %s %s", name, SSN, ID, password);
-
-  
-  // 해당 기능 수행
-   ...
-
-   // 출력 형식
-   fprintf(out_fp, "1.1. 회원가입\n");
-   fprintf(out_fp, "%s %s %s %s\n", name, SSN, ID, password);
-}
-
-
 void program_exit()
 {
-   ....
 }
