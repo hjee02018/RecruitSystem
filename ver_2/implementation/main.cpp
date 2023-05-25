@@ -123,6 +123,44 @@ void doTask()
                         apply_ui.apply(business_number, out_fp);
                         break;
                     }
+                    case 3: // 지원정보 조회
+                    {
+                        ShowApplyInfoUI show_ui;
+                        show_ui.startInterface();
+                        show_ui.showApplyInfo();
+                        gen[now_idx].showApplyInfo(out_fp);
+                        break;
+                    }
+                    case 4: // 지원정보 취소
+                    {
+                        CancelApplyInfoUI cancel_ui;
+                        cancel_ui.startInterface();
+                        gen[now_idx].cancelApplyInfo();
+                        break;
+                    }
+                }
+            }
+            case 5:
+            {
+                switch (menu_level_2)
+                {
+                case 1: // 통계
+                {
+                    // 일반 회원
+                    GetApplyCountUI count_ui;
+                    count_ui.startInterface();
+                    count_ui.getApplyCount();
+                    gen[now_idx].getDepartApplyCount();
+
+                    // 회사 회원
+                    GetRecruitStatusUI status_ui;
+                    status_ui.startInterface();
+                    status_ui.getRecruitStatus();
+                    comp[now_idx].getRecruitDepartInfo();
+                    break;
+                }
+                default:
+                    break;
                 }
             }
             case 6:
@@ -145,5 +183,5 @@ void doTask()
 
 void program_exit()
 {
-    fscanf_s("6.1. 종료\n");
+    fscanf_s( out_fp,"6.1. 종료\n");
 }
