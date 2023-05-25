@@ -17,7 +17,7 @@ class CancelApplyInfo
 private:
 	GenMember m_gen_member;
 public:
-	void cancelApplcyInfo(string compName, int compNo, string departName);
+	void cancelApplcyInfo(string comp_name, int comp_no, string depart_name);
 };
 
 class GetApplyCount
