@@ -137,6 +137,8 @@ void doTask()
                         fprintf(out_fp, "4.4 지원 취소\n");
                         CancelApplyInfoUI cancel_ui;
                         cancel_ui.startInterface();
+                        int ret = cancel_ui.cancelApplyInfo();
+                        gen[now_idx].cancelApplyInfo(ret);
                         break;
                     }
                 }
