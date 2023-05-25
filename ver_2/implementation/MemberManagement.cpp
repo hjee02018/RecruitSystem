@@ -221,7 +221,7 @@ void CompMember::getRecruitDepartInfo()
 				applyMap[it->getDepartName()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		fprintf(out_fp, "%s %d \n", iter->first.c_str(),iter->second);
+		fprintf(out_fp, "> %s %d \n", iter->first.c_str(),iter->second);
 
 }
 
@@ -270,5 +270,5 @@ void GenMember::getDepartApplyCount()
 				applyMap[it->getDepart()] = 1;
 
 	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		fprintf(out_fp, "%s %d \n", iter->first.c_str(),iter->second);
+		fprintf(out_fp, "> %s %d \n", iter->first.c_str(),iter->second);
 }
