@@ -132,7 +132,7 @@ void SearchUi::searchRecruitmentInfoByCompanyName(string company_name, FILE* out
  *
  * @param compMember <- 회사 회원의 ID 정보가 필요
  * @param task <- 업무
- * @param numPeople <- 인원 수
+ * @param num_of_people <- 인원 수
  * @param deadline <- 신청 마감일
  * @return  recruitment <- 객체
  */
@@ -144,7 +144,7 @@ RecruitInfo AddRecruitment::addNewRecruitment(CompMember compMember, string task
 }
 
 RecruitInfo ShowRecruitmentList::showRecruitmentList(CompMember compMember) {
-    return compMember.recruitment;
+    return compMember.getRecruitment();
 }
 
 

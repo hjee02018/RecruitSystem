@@ -26,9 +26,9 @@ public:
     time_t getDeadline();
     void addNewApply(ApplyInfo apply_info);
 
-    // ºñ±³ ¿¬»êÀÚ ¿À¹ö·Îµù
+    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½
     bool operator<(const RecruitInfo& other) const {
         return this->m_company_name < m_company_name;
     }
-    void setRecruitment(string task, int numPeople, time_t deadline);
+    void setRecruitment(string task, int num_of_people, time_t deadline);
 };

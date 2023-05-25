@@ -24,6 +24,7 @@ private:
     ApplyInfoCollection m_apply_info_collection;
     
 public:
+    RecruitInfo recruitment(string task, int num_of_people, time_t deadline);
     string getCompanyName();
     int getBusinessNumber();
     string getTask();

@@ -1,5 +1,5 @@
 #include "MemberManagement.h"
-#include "ApplyMangement.h"
+#include "ApplyManagement.h"
 #include "Member.h"
 
 #include<iostream>
@@ -124,4 +124,7 @@ void CompMember::createCompanyMember(const string* name, const string* num, cons
 	strcpy_s(memPw, MAX_STRING + 1, pw);
 
 	isComp = 1;
+}
+void CompMember::setRecruitment(string task, int num_of_people, time_t deadline) {
+	recruitment.setRecruitment(task, num_of_people, deadline);
 }

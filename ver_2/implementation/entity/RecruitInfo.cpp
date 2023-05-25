@@ -1,4 +1,4 @@
-#include "RecruitInfo.hpp"
+#include "RecruitInfo.h"
 
 /**
  * to return m_company_name

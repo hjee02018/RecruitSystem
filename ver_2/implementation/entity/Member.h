@@ -75,7 +75,5 @@ public:
 	void createCompanyMember(const string* name, const string* num, const string* id, const string* pw);
 	RecruitInfo getRecruitment();
 	void getRecruitDepartInfo();
-	void setRecruitment(CompMember compMember, string task, int num_of_people, time_t deadline) {
-		compMember.setRecruitment(task,num_of_people,deadline);
-	}
+	void setRecruitment(string task, int num_of_people, time_t deadline);
 };
