@@ -14,7 +14,11 @@ private:
 public:
 	ApplyInfo(string company_name, int business_number, string task);
 	string getDepart();
-	void showInfo();
+	void showInfo(FILE* out_fp);
 	string getCompanyName();
 	string getTask();
+	string getCompany();
+	int getNumber();
+	time_t getDeadline();
+	int getCount;
 };
