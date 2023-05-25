@@ -16,7 +16,7 @@ Member mem[MAX_ACCOUNT];
 CompMember comp[MAX_ACCOUNT];
 int numComp = 0;
 GenMember gen[MAX_ACCOUNT];
-int numGen = 0;
+int num_gen = 0;
 string User[MAX_STRING + 1] = "";
 int now_idx; 
 
@@ -26,11 +26,11 @@ int now_idx;
 class AddMemberUI
 {
 public:
-	string inputName[MAX_STRING];
-	string inputNum[MAX_STRING];
-	string inputId[MAX_STRING];
-	string inputPw[MAX_STRING];
-	int inputType;
+	string input_name[MAX_STRING];
+	string input_num[MAX_STRING];
+	string input_id[MAX_STRING];
+	string input_pw[MAX_STRING];
+	int input_type;
 
 	void createNewMember();
 	void startInterface();
@@ -52,8 +52,8 @@ public:
 */
 class LoginUI {
 public:
-	string inputId[MAX_STRING];
-	string inputPw[MAX_STRING];
+	string input_d[MAX_STRING];
+	string input_pw[MAX_STRING];
 	void tryLogin();
 	void startInterface();
 };
@@ -72,7 +72,7 @@ public:
 class DeleteMemberUI {
 public:
 	void tryDelete();
-	void startInterface(string* Id);
+	void startInterface(string* id);
 };
 
 /**
@@ -89,7 +89,7 @@ public:
 class LogoutUI {
 public:
 	void tryLogout();
-	void startInterface(string* Id);
+	void startInterface(string* id);
 };
 
 /**

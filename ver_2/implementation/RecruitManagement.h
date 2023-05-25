@@ -18,7 +18,7 @@ using namespace std;
 class AddRecruitmentUi
 {
 public:
-    void createNewRecruitment(CompMember compMember, string task, int num_of_people, time_t deadline,FILE* out_fp);
+    void createNewRecruitment(CompMember comp_member, string task, int num_of_people, time_t deadline,FILE* out_fp);
     void startInterface(string& task, int& num_of_people, time_t& deadline, FILE *in_fp);
 };
 /**
@@ -28,7 +28,7 @@ public:
 class RecruitmentListUi
 {
 public:
-    void selectRecruitmentList(CompMember compMember, FILE* out_fp);
+    void selectRecruitmentList(CompMember comp_member, FILE* out_fp);
 };
 /**
  * Represents a apply boundary <- "클래스의 역할"
@@ -59,7 +59,7 @@ public:
 class AddRecruitment
 {
 public:
-    RecruitInfo addNewRecruitment(CompMember compmember, string task, int numPeople, time_t deadline);
+    RecruitInfo addNewRecruitment(CompMember comp_member, string task, int num_people, time_t deadline);
 };
 /**
  * Represents boundary <- "클래스의 역할"
@@ -70,7 +70,7 @@ class ShowRecruitmentList
 {
 public:
     ShowRecruitmentList();
-    RecruitInfo showRecruitmentList(CompMember CompMember);
+    RecruitInfo showRecruitmentList(CompMember comp_member);
 };
 
 /**
