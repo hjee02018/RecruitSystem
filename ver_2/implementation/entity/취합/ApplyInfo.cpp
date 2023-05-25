@@ -3,7 +3,7 @@
 /**
  * to return departName
  *
- * @return m_departName
+ * @return m_task
  */
 string ApplyInfo::getDepart()
 {

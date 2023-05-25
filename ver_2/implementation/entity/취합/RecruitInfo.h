@@ -10,7 +10,6 @@ class RecruitInfo
 {
 private:
 	string m_company_name;
-    string m_depart_name;
     int m_business_number;
     int m_num_of_apply;
     int m_num_of_people;

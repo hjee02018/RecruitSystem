@@ -81,9 +81,9 @@ int RecruitInfo::getRecruitCount()
 /**
  * to return name of department
  *
- * @return m_departName
+ * @return m_task
  */
 string RecruitInfo::getDepartName()
 {
-	return m_depart_name;
+	return m_task;
 }
