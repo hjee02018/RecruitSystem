@@ -1,16 +1,15 @@
 #include "ApplyManagement.h"
 
 /**
- * ���� ��� ��� ���
+ * 일반회원이 지원취소 기능을 선택
  */
 void CancelApplyInfoUI::startInterface()
 {
 }
 
 /**
- * �Ϲ� ȸ���� ����� ���� ������ �����Ͽ� ��� ��û
+ * 지원 취소 기능을 수행
  * 
- * @ input ( params ) : ��� �� ���� ����
  */
 void CancelApplyInfoUI::cancelApplyInfo()
 {
@@ -22,14 +21,14 @@ void CancelApplyInfoUI::cancelApplyInfo()
 }
 
 /**
- * ������ ���� Ƚ�� ���� ��� ��� ���
+ * 지원 통계 기능을 제공
  */
 void GetApplyCountUI::startInterface()
 {
 }
 
 /**
- * ���� ���� ��� ��� ����
+ * 지원 통계 기능 실행
  */
 void GetApplyCountUI::getApplyCount()
 {
@@ -38,7 +37,7 @@ void GetApplyCountUI::getApplyCount()
 
 
 /**
- * ä�� ���� ��� ��� ����
+ * 채용 정보 통계 기능을 제공
  */
 void GetRecruitStatusUI::startInterface()
 {
@@ -46,7 +45,7 @@ void GetRecruitStatusUI::startInterface()
 
 
 /**
- * ä�� ���� ��� ��� ����
+ * 채용 통계 기능 구현
  */
 void GetRecruitStatusUI::getRecruitStatus()
 {
@@ -55,7 +54,7 @@ void GetRecruitStatusUI::getRecruitStatus()
 
 
 /**
- * �Ϲ� ȸ���� ���� ���� ���� ��ȸ ����� ����ϰ�����
+ *  지원 정보 출력
  */
 void ShowApplyInfoUI::showApplyInfo()
 {
@@ -64,7 +63,7 @@ void ShowApplyInfoUI::showApplyInfo()
 
 
 /**
- * ���� ���� ���� ��ȸ ��� ���
+ * 지원 정보 출력 기능 선택
  */
 void ShowApplyInfoUI::startInterface()
 {
@@ -72,9 +71,9 @@ void ShowApplyInfoUI::startInterface()
 
 
 /**
- * �Ϲ� ȸ���� �����ϰ��� �ϴ� ���� ������ ������ ���� ��û�� ����
+ * 일반회원이 지원 정보를 취소
  * 
- * @ input ( params ) : ���� �� ���� ����
+ * @ input ( params ) : 취소할 지원 정보
  */
 void CancelApplyInfo::cancelApplcyInfo(string compName, int compNo, string departName)
 {
@@ -82,7 +81,7 @@ void CancelApplyInfo::cancelApplcyInfo(string compName, int compNo, string depar
 }
 
 /**
- * �Ϲ� ȸ���� ������ ���� ������ ������ ���� Ƚ�� ��� Ȯ��
+ * 일반 회원의 업무별 지원 횟수 출력
  */
 void GetApplyCount::getApplyCount()
 {
@@ -90,7 +89,7 @@ void GetApplyCount::getApplyCount()
 }
 
 /**
- * ȸ�� ȸ���� ����� ä�� ���� ��û
+ * 회사 회원의 업무별 지원자수 출력
  */
 void GetRecruitStatus::getRecruitStatus()
 {
@@ -98,80 +97,9 @@ void GetRecruitStatus::getRecruitStatus()
 }
 
 /**
- * �Ϲ� ȸ���� ��� ���� ���� ���
+ * 일반회원의 지원 정보 출력
  */
 void ShowApplyInfo::showApplyInfo()
 {
 	m_genMember.showApplyInfo(out_fp);
 }
-
-
-
-/**
- * ȸ��ȸ���� ������ ������ Ƚ�� ���� ���
- */
-void CompMember::getRecruitDepartInfo()
-{
-	list<RecruitInfo>::iterator it;
-	map<string, int> applyMap;
-	map<string, int>::iterator iter;
-	for (it = m_recruit_list.begin(); it != m_recruit_list.end(); it++)
-		for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-			if (iter->first == it->getDepartName())
-				iter->second++;
-			else
-				applyMap[it->getDepartName()] = 1;
-
-	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		fprintf(out_fp, "%s %d\n", iter->first.c_str(), iter->second);
-}
-
-
-/**
- * m_applyList�� ApplyInfo�� ��� ������
- *
- */
-void GenMember::showApplyInfo(FILE *out_fp)
-{
-	list<ApplyInfo>::iterator it;
-	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		it->showInfo(out_fp);
-}
-
-/**
- * m_applyList�� ApplyInfo ����(���� ��� ���)
- *
- * @ input ( params ) : ���� �� ���� ����
- */
-void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
-{
-	list<ApplyInfo>::iterator it;
-	int i = 0;
-	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		if (it->getDepart() == departName)
-			it->~ApplyInfo();
-	
-	m_apply_list.erase(it);
-}
-
-/**
- * m_applyList�� departName�� count ���
- *
- */
-void GenMember::getDepartApplyCount()
-{
-	list<ApplyInfo>::iterator it;
-	map<string, int> applyMap;
-	map<string, int>::iterator iter;
-	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-			if (iter->first == it->getDepart())
-				iter->second++;
-			else
-				applyMap[it->getDepart()] = 1;
-
-	for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
-		fprintf(out_fp, "%s %d\n", iter->first.c_str(), iter->second);
-}
-
-
