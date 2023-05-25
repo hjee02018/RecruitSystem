@@ -14,9 +14,9 @@ using namespace std;
  * @return recruitment
  * @throws nothing
 */
-RecruitInfo CompMember::getRecruitment()
+list<RecruitInfo> CompMember::getRecruitment()
 {
-	return m_recruitment;
+	return m_recruit_list;
 }
 
 /**
@@ -26,7 +26,7 @@ RecruitInfo CompMember::getRecruitment()
  * @throws nothing
 */
 void AddMemberUI::createNewMember() {
-	fscanf_s(in_fp, "%d %s %s %s %s", input_type, sizeof(input_type), input_name, sizeof(input_name),
+	fscanf(in_fp, "%d %s %s %s %s", input_type, sizeof(input_type), input_name, sizeof(input_name),
 		input_num, sizeof(input_num), input_id, sizeof(input_id), input_pw, sizeof(input_pw));
 }
 
@@ -37,8 +37,8 @@ void AddMemberUI::createNewMember() {
  * @throws nothing
 */
 void AddMemberUI::startInterface() {
-	fprintf_s(out_fp, "1.1. 회원가입\n");
-	fprintf_s(out_fp, ">  %d %s %s %s %s\n", input_type, input_name, input_num, input_id, input_pw);
+	fprintf(out_fp, "1.1. 회원가입\n");
+	fprintf(out_fp, ">  %d %s %s %s %s\n", input_type, input_name, input_num, input_id, input_pw);
 }
 
 /**
@@ -70,7 +70,7 @@ void AddMember::addMember() {
  * @return nothing
  * @throws nothing
 */
-void AddMember::addNewGeneralMember(const string* name, const string* num, const string* id, const string* pw) {
+void AddMember::addNewGeneralMember(const string name, const string num, const string id, const string pw) {
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].is_member == 0) {
 			mem[i].addNewGeneralMember(name, num, id, pw);
@@ -90,7 +90,7 @@ void AddMember::addNewGeneralMember(const string* name, const string* num, const
  * @return nothing
  * @return nothing
 */
-void AddMember::addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw) {
+void AddMember::addNewCompanyMember(const string name, const string num, const string id, const string pw) {
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].is_member == 0) {
 			mem[i].addNewCompanyMember(name, num, id, pw);
@@ -107,7 +107,7 @@ void AddMember::addNewCompanyMember(const string* name, const string* num, const
  * @throws nothing
 */
 void LoginUI::tryLogin() {
-	fscanf_s(in_fp, "%s %s", input_id, sizeof(input_id), input_pw, sizeof(input_pw));
+	fscanf(in_fp, "%s %s", input_id, sizeof(input_id), input_pw, sizeof(input_pw));
 }
 
 /**
@@ -117,8 +117,8 @@ void LoginUI::tryLogin() {
  * @throws nothing
 */
 void LoginUI::startInterface() {
-	fprintf_s(out_fp, "2.1. 로그인\n");
-	fprintf_s(out_fp, "> %s %s\n", input_id, input_pw);
+	fprintf(out_fp, "2.1. 로그인\n");
+	fprintf(out_fp, "> %s %s\n", input_id, input_pw);
 }
 
 /**
@@ -132,8 +132,9 @@ void Login::tryLogin() {
 	loginui.tryLogin();
 	for (int i = 0; i < MAX_ACCOUNT; i++) {
 		if (mem[i].checkValidation(loginui.input_id, loginui.input_pw) == 1) {
-			strcpy_s(User, MAX_STRING + 1, loginui.input_id);
 			now_idx = i;
+			user[now_idx] = loginui.input_id;
+			
 			loginui.startInterface();
 			break;
 		}
@@ -154,9 +155,9 @@ void DeleteMemberUI::tryDelete() {
  * @return nothing
  * @throws nothing
  */ 
-void DeleteMemberUI::startInterface(string* Id) {
-	fprintf_s(out_fp, "1.2. 회원탈퇴\n");
-	fprintf_s(out_fp, "> %s\n", Id);
+void DeleteMemberUI::startInterface(string id) {
+	fprintf(out_fp, "1.2. 회원탈퇴\n");
+	fprintf(out_fp, "> %s\n", id);
 }
 
 /**
@@ -168,8 +169,8 @@ void DeleteMemberUI::startInterface(string* Id) {
 void DeleteMember::deleteMemberAuth() {
 	DeleteMemberUI deletememberui;
 
-	string id[MAX_ACCOUNT];
-	mem[now_idx].toDeleteMemberAuth(id);
+	string id; //
+	mem[now_idx].toDeleteMemberAuth();
 	mem[now_idx].is_member = 0;
 	now_idx = -1;
 
@@ -187,18 +188,17 @@ void LogoutUI::tryLogout() {
 /**
  * 로그아웃 정보 출력
 */
-void LogoutUI::startInterface(string* Id) {
-	fprintf_s(out_fp, "2.2. 로그아웃\n");
-	fprintf_s(out_fp, "> %s \n", Id);
+void LogoutUI::startInterface(string Id) {
+	fprintf(out_fp, "2.2. 로그아웃\n");
+	fprintf(out_fp, "> %s \n", Id);
 }
 
 /**
  * 로그아웃
 */
 void Logout::tryLogout() {
-	string id[MAX_ACCOUNT];
-	mem[now_idx].toLogout(id);
-	strcpy_s(User, MAX_STRING + 1, "");
+	string id;
+	mem[now_idx].toLogout();
 	now_idx = -1;
 	LogoutUI logoutui;
 	logoutui.startInterface(id);
@@ -233,10 +233,14 @@ void CompMember::getRecruitDepartInfo()
 void GenMember::showApplyInfo()
 {
 	list<ApplyInfo>::iterator it;
-	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		fprintf(out_fp, "%s %d %s %d %s \n", it->getCompany().c_str(),it->getNumber().c_str()
-			,it->getDepart().c_str()
-			,it->getCount().c_str(),it->getDeadline().c_str() );
+	
+	for (auto it = m_apply_list.begin(); it != m_apply_list.end(); it++){
+		time_t deadline = (*it).getDeadline();
+		char buffer[80];
+        strftime(buffer, sizeof(buffer), "%Y/%m/%d", localtime(&deadline));
+		fprintf(out_fp, "%s %d %s %d %s \n", (*it).getCompany(), (*it).getNumber(),(*it).getDepart(), (*it).getCount(), buffer);
+	}
+		
 }
 
 /**
@@ -244,15 +248,18 @@ void GenMember::showApplyInfo()
  *
  * @ input ( params ) : 취소할 지원 정보
  */
-void GenMember::cancelApplyInfo(int compNo)
+ApplyInfo GenMember::cancelApplyInfo(int compNo)
 {
 	list<ApplyInfo>::iterator it;
 	int i = 0;
 	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
-		if (it->getNumber() == compNo)
+		if (it->getNumber() == compNo){
 			it->~ApplyInfo();
+			m_apply_list.erase(it);
+			return *it;
+		}
+			
 
-	m_apply_list.erase(it);
 }
 
 /**

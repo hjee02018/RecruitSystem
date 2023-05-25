@@ -9,7 +9,7 @@ private:
 	string m_company_name;
 	string m_task;
 	int m_business_number;
-	int m_headCount;
+	int m_head_count;
 	time_t m_deadline;
 public:
 	ApplyInfo(string company_name, int business_number, string task);
@@ -20,5 +20,5 @@ public:
 	string getCompany();
 	int getNumber();
 	time_t getDeadline();
-	int getCount;
+    int getCount();
 };

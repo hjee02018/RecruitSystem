@@ -31,6 +31,10 @@ time_t ApplyInfo::getDeadline()
 {
     return m_deadline;
 }
+
+int ApplyInfo::getCount(){
+    return m_head_count;
+}
 /**
  * to return company_name. <- "함수가 수행하는 작업"
  *

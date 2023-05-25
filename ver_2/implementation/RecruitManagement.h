@@ -70,7 +70,7 @@ class ShowRecruitmentList
 {
 public:
     ShowRecruitmentList();
-    RecruitInfo showRecruitmentList(CompMember comp_member);
+    list<RecruitInfo> showRecruitmentList(CompMember comp_member);
 };
 
 /**

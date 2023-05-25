@@ -16,7 +16,7 @@ CompMember comp[MAX_ACCOUNT];
 int num_comp = 0;
 GenMember gen[MAX_ACCOUNT];
 int num_gen = 0;
-string User[MAX_STRING + 1];
+string user[MAX_STRING + 1];
 int now_idx; 
 
 /**
@@ -25,10 +25,10 @@ int now_idx;
 class AddMemberUI
 {
 public:
-	string input_name[MAX_STRING];
-	string input_num[MAX_STRING];
-	string input_id[MAX_STRING];
-	string input_pw[MAX_STRING];
+	string input_name;
+	string input_num;
+	string input_id;
+	string input_pw;
 	int input_type;
 
 	void createNewMember();
@@ -42,8 +42,8 @@ class AddMember
 {
 public:
 	void addMember();
-	void addNewGeneralMember(const string* name, const string* num, const string* id, const string* pw);
-	void addNewCompanyMember(const string* name, const string* num, const string* id, const string* pw);
+	void addNewGeneralMember(const string name, const string num, const string id, const string pw);
+	void addNewCompanyMember(const string name, const string num, const string id, const string pw);
 };
 
 /**
@@ -51,8 +51,8 @@ public:
 */
 class LoginUI {
 public:
-	string input_id[MAX_STRING];
-	string input_pw[MAX_STRING];
+	string input_id;
+	string input_pw;
 	void tryLogin();
 	void startInterface();
 };
@@ -71,7 +71,7 @@ public:
 class DeleteMemberUI {
 public:
 	void tryDelete();
-	void startInterface(string* id);
+	void startInterface(string id);
 };
 
 /**
@@ -88,7 +88,7 @@ public:
 class LogoutUI {
 public:
 	void tryLogout();
-	void startInterface(string* id);
+	void startInterface(string id);
 };
 
 /**

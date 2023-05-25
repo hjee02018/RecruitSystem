@@ -73,8 +73,8 @@ bool Member::checkValidation(const string id, const string pw) {
  * @return nothing
  * @throws nothing
 */
-void Member::toDeleteMemberAuth(string id) {
-	id=this->mem_id;
+void Member::toDeleteMemberAuth() {
+	is_member = 0;
 }
 
 /**
@@ -84,8 +84,8 @@ void Member::toDeleteMemberAuth(string id) {
  * @return nothing
  * @throws nothing
 */
-void Member::toLogout(string id) {
-	id=this->mem_id;
+void Member::toLogout() {
+	mem_id = "";
 }
 
 /**
@@ -124,7 +124,9 @@ void CompMember::createCompanyMember(const string name, const string num, const 
 	this->is_comp = 1;
 }
 void CompMember::setRecruitment(string task, int num_of_people, time_t deadline) {
-	m_recruitment.setRecruitment(task, num_of_people, deadline);
+	RecruitInfo recruit;
+	recruit.setRecruitment(task, num_of_people, deadline);
+	m_recruit_list.push_back(recruit);
 }
 
 void GenMember::addApply(ApplyInfo apply)

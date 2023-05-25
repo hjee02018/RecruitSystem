@@ -2,9 +2,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <iostream>
+#include "ApplyManagement.h"
 #include "MemberManagement.h"
 #include "RecruitManagement.h"
-#include "ApplyManagement.h"
+
 #include "./entity/ApplyInfo.h"
 #include "./entity/RecruitInfo.h"
 #include "./entity/Member.h"
@@ -19,14 +20,11 @@ void doTask();
 void join();
 void program_exit();
 
-// 변수 선언
-FILE* in_fp, *out_fp;
 
 int main()
 {
   // 파일 입출력을 위한 초기화
-  FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
-  FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
+ 
 
   doTask();
 
@@ -129,7 +127,7 @@ void doTask()
                         ShowApplyInfoUI show_ui;
                         show_ui.startInterface();
                         show_ui.showApplyInfo();
-                        gen[now_idx].showApplyInfo(out_fp);
+                        gen[now_idx].showApplyInfo();
                         break;
                     }
                     case 4: // 지원정보 취소
@@ -138,7 +136,8 @@ void doTask()
                         CancelApplyInfoUI cancel_ui;
                         cancel_ui.startInterface();
                         int ret = cancel_ui.cancelApplyInfo();
-                        gen[now_idx].cancelApplyInfo(ret);
+                        ApplyInfo apply = gen[now_idx].cancelApplyInfo(ret);
+                        fprintf(out_fp, "> %s %d %s \n",apply.getCompanyName().c_str(), apply.getNumber(), apply.getTask().c_str());
                         break;
                     }
                 }
@@ -187,5 +186,5 @@ void doTask()
 
 void program_exit()
 {
-    fscanf_s( out_fp,"6.1. 종료\n");
+    fprintf( out_fp,"6.1. 종료\n");
 }

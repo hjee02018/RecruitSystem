@@ -36,11 +36,14 @@ void AddRecruitmentUi::createNewRecruitment(CompMember compMember,string task, i
  */
 void RecruitmentListUi::selectRecruitmentList(CompMember compMember, FILE* out_fp) // 접속자의 ID가 필요
 {
-    ShowRecruitmentList recruitmentList;
-    RecruitInfo recruitment = recruitmentList.showRecruitmentList(compMember);
+    ShowRecruitmentList recruitment_list;
+    list<RecruitInfo> recruitment = recruitment_list.showRecruitmentList(compMember);
     fprintf(out_fp, "3.2. 등록된 채용 정보 조회\n");
     //업무, 인원 수, 신청 마감일 출력
-    fprintf(out_fp, "%s %d %lld \n", recruitment.getTask(), recruitment.getNumOfPeople(), recruitment.getDeadline());
+    for(auto it = recruitment.begin(); it != recruitment.end(); it++){
+        fprintf(out_fp, "%s %d %lld \n", (*it).getTask(), (*it).getNumOfPeople(), (*it).getDeadline());
+    }
+    
 }
 
 /**
@@ -145,8 +148,8 @@ RecruitInfo AddRecruitment::addNewRecruitment(CompMember compMember, string task
     return recruitment;
 }
 
-RecruitInfo ShowRecruitmentList::showRecruitmentList(CompMember compMember) {
-    return compMember.getRecruitment();
+list<RecruitInfo> ShowRecruitmentList::showRecruitmentList(CompMember comp_member) {
+    return comp_member.getRecruitment();
 }
 
 
@@ -162,8 +165,9 @@ ApplyInfo ApplyCompany::applyCompany(int business_number)
     
     vector<RecruitInfo> recruit_info_list;
 
-    for(int i=0; i<numComp; i++){
-        recruit_info_list.push_back(comp[i].getRecruitment());
+    for(int i=0; i<num_comp; i++){
+        list<RecruitInfo> recruit_infos = comp[i].getRecruitment();
+        recruit_info_list.insert(recruit_info_list.end(), recruit_infos.begin(), recruit_infos.end());
     }
     
     for(int i=0; i< recruit_info_list.size(); i++)
@@ -196,8 +200,9 @@ RecruitInfo Search::showRecruitmentInfoByCompanyName(string company_name)
     
     vector<RecruitInfo> recruit_info_list;
     
-    for(int i=0; i<numComp; i++){
-        recruit_info_list.push_back(comp[i].getRecruitment());
+    for(int i=0; i<num_comp; i++){
+        list<RecruitInfo> recruit_infos = comp[i].getRecruitment();
+        recruit_info_list.insert(recruit_info_list.end(), recruit_infos.begin(), recruit_infos.end());
     }
         
     for(int i =0; i<recruit_info_list.size(); i++){

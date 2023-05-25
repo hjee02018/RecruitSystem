@@ -34,8 +34,8 @@ public:
 	void addNewGeneralMember(const string name, const string num, const string id, const string pw);
 	void addNewCompanyMember(const string name, const string num, const string id, const string pw);
 	bool checkValidation(const string id, const string pw);
-	void toDeleteMemberAuth(string id);
-	void toLogout(string id);
+	void toDeleteMemberAuth();
+	void toLogout();
 };
 
 /**
@@ -53,7 +53,7 @@ public:
 	void createGeneralMember(const string name, const string num, const string id, const string pw);
 
 	void showApplyInfo();
-	void cancelApplyInfo(string comp_name, int comp_no, string depart_name);
+	ApplyInfo cancelApplyInfo(int comp_no);
 	void getDepartApplyCount();
 	void addApply(ApplyInfo apply);
 };
@@ -71,7 +71,7 @@ private:
 public:
 	bool is_comp = 0; // �ϴٰ� �ʿ��ؼ� ���� -> public
 	void createCompanyMember(const string name, const string num, const string id, const string pw);
-	RecruitInfo getRecruitment();
+	list<RecruitInfo> getRecruitment();
 	void getRecruitDepartInfo();
 	void setRecruitment(string task, int num_of_people, time_t deadline);
 };
