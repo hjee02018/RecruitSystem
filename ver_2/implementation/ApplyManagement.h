@@ -8,12 +8,8 @@
 
 using namespace std;
 
-FILE* in_fp, * out_fp;
-
 #define MAX_STRING 32
 #define MAX_ACCOUNT 100
-#define INPUT_FILE_NAME "input.txt"
-#define OUTPUT_FILE_NAME "output.txt"
 
 
 class CancelApplyInfo
