@@ -16,7 +16,7 @@ using namespace std;
 */
 RecruitInfo CompMember::getRecruitment()
 {
-	return recruitment;
+	return m_recruitment;
 }
 
 /**
@@ -170,7 +170,7 @@ void DeleteMember::deleteMemberAuth() {
 
 	string id[MAX_ACCOUNT];
 	mem[now_idx].toDeleteMemberAuth(id);
-	mem[now_idx].isMember = 0;
+	mem[now_idx].is_member = 0;
 	now_idx = -1;
 
 	deletememberui.startInterface(id);
@@ -213,7 +213,7 @@ void CompMember::getRecruitDepartInfo()
 	list<RecruitInfo>::iterator it;
 	map<string, int> applyMap;
 	map<string, int>::iterator iter;
-	for (it = m_recruitlist.begin(); it != m_recruitlist.end(); it++)
+	for (it = m_recruit_list.begin(); it != m_recruit_list.end(); it++)
 		for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
 			if (iter->first == it->getDepartName())
 				iter->second++;
@@ -233,7 +233,7 @@ void CompMember::getRecruitDepartInfo()
 void GenMember::showApplyInfo()
 {
 	list<ApplyInfo>::iterator it;
-	for (it = m_applyList.begin(); it != m_applyList.end(); it++)
+	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
 		it->showInfo();
 }
 
@@ -246,7 +246,7 @@ void GenMember::cancelApplyInfo(string compName, int compNo, string departName)
 {
 	list<ApplyInfo>::iterator it;
 	int i = 0;
-	for (it = m_applyList.begin(); it != m_applyList.end(); it++)
+	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
 		if (it->getDepart() == departName)
 			it->~ApplyInfo();
 
@@ -262,7 +262,7 @@ void GenMember::getDepartApplyCount()
 	list<ApplyInfo>::iterator it;
 	map<string, int> applyMap;
 	map<string, int>::iterator iter;
-	for (it = m_applyList.begin(); it != m_applyList.end(); it++)
+	for (it = m_apply_list.begin(); it != m_apply_list.end(); it++)
 		for (iter = applyMap.begin(); iter != applyMap.end(); iter++)
 			if (iter->first == it->getDepart())
 				iter->second++;
