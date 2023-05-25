@@ -13,18 +13,28 @@ string ApplyInfo::getDepart()
 /**
  * to show ApplyInfo
  */
-void ApplyInfo::showInfo()
+void ApplyInfo::showInfo(FILE *out_fp)
 {
-	cout << "[È¸»ç ÀÌ¸§ : " << m_company_name <<
-		" ¾÷¹« : " << m_task <<
-		" ÀÎ¿ø¼ö : " << m_headCount <<
-		" ½ÅÃ» ¸¶°¨ÀÏ : " << m_deadline << "]" << endl;
+
 }
 
+
+string ApplyInfo::getCompany()
+{
+    return m_company_name;
+}
+int ApplyInfo::getNumber()
+{
+    return m_business_number;
+}
+time_t ApplyInfo::getDeadline()
+{
+    return m_deadline;
+}
 /**
- * to return company_name. <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * to return company_name. <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @return company_name- "¹ÝÈ¯°ª"
+ * @return company_name- "ë°˜í™˜ê°’"
  */
 string ApplyInfo::getCompanyName()
 {
@@ -32,9 +42,9 @@ string ApplyInfo::getCompanyName()
 }
 
 /**
- * to return task. <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * to return task. <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @return task- "¹ÝÈ¯°ª"
+ * @return task- "ë°˜í™˜ê°’"
  */
 string ApplyInfo::getTask()
 {
@@ -42,13 +52,13 @@ string ApplyInfo::getTask()
 }
 
 /**
- * All arguments constructor. <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * All arguments constructor. <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
 
- * @param business_name to create constructor. <- "¸Å°³º¯¼ö1"
- * @param company_name to create constructor. <- "¸Å°³º¯¼ö2"
- * @param task to create constructor. <- "¸Å°³º¯¼ö3"
+ * @param business_name to create constructor. <- "ë§¤ê°œë³€ìˆ˜1"
+ * @param company_name to create constructor. <- "ë§¤ê°œë³€ìˆ˜2"
+ * @param task to create constructor. <- "ë§¤ê°œë³€ìˆ˜3"
  *
- * @return this- "¹ÝÈ¯°ª"
+ * @return this- "ë°˜í™˜ê°’"
  */
 ApplyInfo::ApplyInfo(string company_name, int business_number, string task)
 {
