@@ -125,6 +125,7 @@ void doTask()
                     }
                     case 3: // 지원정보 조회
                     {
+                        fprintf(out_fp, "4.3 지원 정보 조회\n");
                         ShowApplyInfoUI show_ui;
                         show_ui.startInterface();
                         show_ui.showApplyInfo();
@@ -133,6 +134,7 @@ void doTask()
                     }
                     case 4: // 지원정보 취소
                     {
+                        fprintf(out_fp, "4.4 지원 취소\n");
                         CancelApplyInfoUI cancel_ui;
                         cancel_ui.startInterface();
                         gen[now_idx].cancelApplyInfo();
@@ -142,6 +144,7 @@ void doTask()
             }
             case 5:
             {
+                fprintf(out_fp, "5.1 지원 정보 통계\n");
                 switch (menu_level_2)
                 {
                 case 1: // 통계
