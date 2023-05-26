@@ -19,13 +19,11 @@
 void doTask();
 void program_exit();
 
-FILE* in_fp; *out_fp;
-
 int main()
 {
 
-    FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
-    FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
+    in_fp = fopen(INPUT_FILE_NAME, "r+");
+    out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
     doTask();
 

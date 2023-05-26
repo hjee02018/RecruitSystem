@@ -1,31 +1,32 @@
 #include "ApplyManagement.h"
 
 /**
- * ì¼ë°˜ íšŒì› ì§€ì› ì·¨ì†Œ ì¸í„°í˜ì´ìŠ¤ ì‹œì‘
+ * ?¼ë°? ?šŒ?› ì§??› ì·¨ì†Œ ?¸?„°?˜?´?Š¤ ?‹œ?‘
  */
 void CancelApplyInfoUI::startInterface()
 {
 }
 
 /**
- * ì·¨ì†Œ í•  ì§€ì›ì˜ ì‚¬ì—…ì ë²ˆí˜¸ ë°˜í™˜
+ * ì·¨ì†Œ ?•  ì§??›?˜ ?‚¬?—…? ë²ˆí˜¸ ë°˜í™˜
  */
 int CancelApplyInfoUI::cancelApplyInfo()
 {
+	in_fp = fopen(INPUT_FILE_NAME, "r+");
 	int ret;
 	fscanf(in_fp, "%d", ret);
 	return ret;
 }
 
 /**
- * ì¼ë°˜íšŒì›ì˜ ì§€ì› í†µê³„ ê¸°ëŠ¥ 
+ * ?¼ë°˜íšŒ?›?˜ ì§??› ?†µê³? ê¸°ëŠ¥ 
  */
 void GetApplyCountUI::startInterface()
 {
 }
 
 /**
- * ì¼ë°˜íšŒì›ì˜ ì—…ë¬´ë³„ ì§€ì› íšŸìˆ˜ í†µê³„
+ * ?¼ë°˜íšŒ?›?˜ ?—…ë¬´ë³„ ì§??› ?šŸ?ˆ˜ ?†µê³?
  */
 void GetApplyCountUI::getApplyCount()
 {
@@ -34,7 +35,7 @@ void GetApplyCountUI::getApplyCount()
 
 
 /**
- * íšŒì‚¬ íšŒì›ì˜ ì±„ìš©ì •ë³´ í†µê³„ ê¸°ëŠ¥ ì¸í„°í˜ì´ìŠ¤
+ * ?šŒ?‚¬ ?šŒ?›?˜ ì±„ìš©? •ë³? ?†µê³? ê¸°ëŠ¥ ?¸?„°?˜?´?Š¤
  */
 void GetRecruitStatusUI::startInterface()
 {
@@ -42,7 +43,7 @@ void GetRecruitStatusUI::startInterface()
 
 
 /**
- * íšŒì‚¬íšŒì›ì´ ë“±ë¡í•œ ì±„ìš©ì •ë³´ì˜ ì—…ë¬´ë³„ ì§€ì›ì í†µê³„ ì œê³µ
+ * ?šŒ?‚¬?šŒ?›?´ ?“±ë¡í•œ ì±„ìš©? •ë³´ì˜ ?—…ë¬´ë³„ ì§??›? ?†µê³? ? œê³?
  */
 void GetRecruitStatusUI::getRecruitStatus()
 {
@@ -51,7 +52,7 @@ void GetRecruitStatusUI::getRecruitStatus()
 
 
 /**
- *  Ã¬Â§??â€ºÂ ?Â â€¢Ã«Â³? Ã¬Â¶Å“Ã«Â Â¥
+ *  Ã¬Â§????ºÂ? ?Â ??¢Ã«Â?? Ã¬Â¶Å“Ã«Â Â¥
  */
 void ShowApplyInfoUI::showApplyInfo()
 {
@@ -60,7 +61,7 @@ void ShowApplyInfoUI::showApplyInfo()
 
 
 /**
- * ì§€ì› ì •ë³´ ì¡°íšŒ ì¸í„°í˜ì´ìŠ¤
+ * ì§??› ? •ë³? ì¡°íšŒ ?¸?„°?˜?´?Š¤
  */
 void ShowApplyInfoUI::startInterface()
 {
@@ -68,9 +69,9 @@ void ShowApplyInfoUI::startInterface()
 
 
 /**
- * ì¼ë°˜íšŒì›ì´ comp_noì™€ ì¼ì¹˜í•˜ëŠ” ì§€ì› ì •ë³´ë¥¼ ì·¨ì†Œ
+ * ?¼ë°˜íšŒ?›?´ comp_no??? ?¼ì¹˜í•˜?Š” ì§??› ? •ë³´ë?? ì·¨ì†Œ
  * 
- * @ input ( params ) : ì·¨ì†Œí•  ì§€ì› ì •ë³´ì˜ ì‚¬ì—…ìë²ˆí˜¸
+ * @ input ( params ) : ì·¨ì†Œ?•  ì§??› ? •ë³´ì˜ ?‚¬?—…?ë²ˆí˜¸
  */
 void CancelApplyInfo::cancelApplcyInfo(int comp_no)
 {
@@ -78,7 +79,7 @@ void CancelApplyInfo::cancelApplcyInfo(int comp_no)
 }
 
 /**
- * ì¼ë°˜íšŒì›ì˜ ì§€ì› í†µê³„ ê¸°ëŠ¥
+ * ?¼ë°˜íšŒ?›?˜ ì§??› ?†µê³? ê¸°ëŠ¥
  */
 void GetApplyCount::getApplyCount()
 {
@@ -86,7 +87,7 @@ void GetApplyCount::getApplyCount()
 }
 
 /**
- * íšŒì‚¬íšŒì›ì˜ ì±„ìš© í†µê³„ ì œê³µ
+ * ?šŒ?‚¬?šŒ?›?˜ ì±„ìš© ?†µê³? ? œê³?
  */
 void GetRecruitStatus::getRecruitStatus()
 {
@@ -94,7 +95,7 @@ void GetRecruitStatus::getRecruitStatus()
 }
 
 /**
- * ì¼ë°˜ íšŒì›ì˜ ëª¨ë“  ì§€ì› ì •ë³´ ì¡°íšŒ
+ * ?¼ë°? ?šŒ?›?˜ ëª¨ë“  ì§??› ? •ë³? ì¡°íšŒ
  */
 void ShowApplyInfo::showApplyInfo()
 {
