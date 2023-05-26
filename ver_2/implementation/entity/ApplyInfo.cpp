@@ -11,30 +11,45 @@ string ApplyInfo::getDepart()
 }
 
 /**
- * to show ApplyInfo
+ * to return m_company_name
+ *
+ * @return m_company_name
  */
-void ApplyInfo::showInfo(FILE *out_fp)
-{
-
-}
-
-
 string ApplyInfo::getCompany()
 {
     return m_company_name;
 }
+
+/**
+ * to return m_business_number
+ *
+ * @return m_business_number
+ */
 int ApplyInfo::getNumber()
 {
     return m_business_number;
 }
+
+/**
+ * to return m_deadline
+ *
+ * @return m_deadline
+ */
 time_t ApplyInfo::getDeadline()
 {
     return m_deadline;
 }
 
+
+/**
+ * to return m_head_count
+ *
+ * @return m_head_count
+ */
 int ApplyInfo::getCount(){
     return m_head_count;
 }
+
 /**
  * to return company_name. <- "함수가 수행하는 작업"
  *
