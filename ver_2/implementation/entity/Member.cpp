@@ -123,12 +123,26 @@ void CompMember::createCompanyMember(const string name, const string num, const 
 	this->mem_pw=pw;
 	this->is_comp = 1;
 }
+/**
+ * 회사 회원이 등록한 채용 정보 저장
+ * 
+ * @param task : 업무
+ * @param num_of_people : 인원 수
+ * @param deadline : 신청 마감일
+ * @return nothing
+*/
 void CompMember::setRecruitment(string task, int num_of_people, time_t deadline) {
 	RecruitInfo recruit;
 	recruit.setRecruitment(task, num_of_people, deadline);
 	m_recruit_list.push_back(recruit);
 }
-
+/**
+ * 일반 회원이 지원한 채용 정보 저장
+ * 
+ * @param apply : 지원 정보
+ * @param deadline : 신청 마감일
+ * @return nothing
+*/
 void GenMember::addApply(ApplyInfo apply)
 {
 	m_apply_list.push_back(apply);
