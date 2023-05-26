@@ -13,9 +13,9 @@ string RecruitInfo::getCompanyName()
 }
 
 /**
- * to return m_business_number <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * to return m_business_number <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @return m_business_number- "¹ÝÈ¯°ª"
+ * @return m_business_number- "ë°˜í™˜ê°’"
  */
 int RecruitInfo::getBusinessNumber()
 {
@@ -23,9 +23,9 @@ int RecruitInfo::getBusinessNumber()
 }
 
 /**
- * to return m_task <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * to return m_task <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @return m_task- "¹ÝÈ¯°ª"
+ * @return m_task- "ë°˜í™˜ê°’"
  */
 string RecruitInfo::getTask()
 {
@@ -33,9 +33,9 @@ string RecruitInfo::getTask()
 }
 
 /**
- * to return m_num_of_people <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * to return m_num_of_people <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @return m_num_of_people- "¹ÝÈ¯°ª"
+ * @return m_num_of_people- "ë°˜í™˜ê°’"
  */
 int RecruitInfo::getNumOfPeople()
 {
@@ -43,9 +43,9 @@ int RecruitInfo::getNumOfPeople()
 }
 
 /**
- * to return m_deadline<- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * to return m_deadline<- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @return m_deadline- "¹ÝÈ¯°ª"
+ * @return m_deadline- "ë°˜í™˜ê°’"
  */
 time_t RecruitInfo::getDeadline()
 {
@@ -53,14 +53,22 @@ time_t RecruitInfo::getDeadline()
 }
 
 /**
- * add apply info to apply_info_collectionsk <- "ÇÔ¼ö°¡ ¼öÇàÇÏ´Â ÀÛ¾÷"
+ * add apply info to apply_info_collectionsk <- "í•¨ìˆ˜ê°€ ìˆ˜í–‰í•˜ëŠ” ìž‘ì—…"
  *
- * @param apply applying information. <- "¸Å°³º¯¼ö1"
- * @return void <- "¹ÝÈ¯°ª"
+ * @param apply applying information. <- "ë§¤ê°œë³€ìˆ˜1"
+ * @return void <- "ë°˜í™˜ê°’"
  */
 void RecruitInfo::addNewApply(ApplyInfo apply) {
     m_apply_info_collection.addApplyInfo(apply);
 }
+/**
+ * set recruitment 
+ *
+ * @param task : ì—…ë¬´
+ * @param num_of_people : ì¸ì› ìˆ˜
+ * @param deadline : ì‹ ì²­ ë§ˆê°ì¼
+ * @return void
+ */
 void RecruitInfo::setRecruitment(string task, int num_of_people, time_t deadline) {
     this->m_task = task;
     this->m_num_of_people = num_of_people;
