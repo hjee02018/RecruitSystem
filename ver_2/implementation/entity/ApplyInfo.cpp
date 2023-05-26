@@ -61,9 +61,9 @@ string ApplyInfo::getCompanyName()
 }
 
 /**
- * to return task. <- "함수가 수행하는 작업"
+ * to return m_task
  *
- * @return task- "반환값"
+ * @return m_task
  */
 string ApplyInfo::getTask()
 {
@@ -71,13 +71,12 @@ string ApplyInfo::getTask()
 }
 
 /**
- * All arguments constructor. <- "함수가 수행하는 작업"
-
- * @param business_name to create constructor. <- "매개변수1"
- * @param company_name to create constructor. <- "매개변수2"
- * @param task to create constructor. <- "매개변수3"
+ * All arguments constructor. 
+ * @param business_name to create constructor. 
+ * @param company_name to create constructor.
+ * @param task to create constructor. 
  *
- * @return this- "반환값"
+ * @return this instance
  */
 ApplyInfo::ApplyInfo(string company_name, int business_number, string task)
 {
