@@ -12,7 +12,7 @@ using namespace std;
 #define MAX_ACCOUNT 100
 
  FILE* in_fp = fopen(INPUT_FILE_NAME, "r+");
-  FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
+ FILE* out_fp = fopen(OUTPUT_FILE_NAME, "w+");
 
 /**
  * 지원 취소 인터페이스를 시작하고 일반회원의 지원 취소 기능을 수행

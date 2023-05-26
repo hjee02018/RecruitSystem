@@ -19,6 +19,7 @@
 void doTask();
 void program_exit();
 
+FILE* in_fp; *out_fp;
 
 int main()
 {

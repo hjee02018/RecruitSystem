@@ -11,13 +11,13 @@ using namespace std;
 #define MAX_ACCOUNT 100
 #define INPUT_FILE_NAME "input.txt"
 #define OUTPUT_FILE_NAME "output.txt"
-Member mem[MAX_ACCOUNT];
-CompMember comp[MAX_ACCOUNT];
-int num_comp = 0;
-GenMember gen[MAX_ACCOUNT];
-int num_gen = 0;
-string user[MAX_STRING + 1];
-int now_idx; 
+extern Member mem[MAX_ACCOUNT];
+extern CompMember comp[MAX_ACCOUNT];
+extern int num_comp;
+extern GenMember gen[MAX_ACCOUNT];
+extern int num_gen;
+extern string user[MAX_STRING + 1];
+extern int now_idx; 
 
 /**
  * 회원가입 관련 boundary class
