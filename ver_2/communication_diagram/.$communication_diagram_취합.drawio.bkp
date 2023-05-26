@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-05-26T02:05:56.618Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="4053Yc5uExOK6lE8fqsf" version="21.2.8" type="device">
+<mxfile host="Electron" modified="2023-05-26T02:05:50.839Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.2.8 Chrome/112.0.5615.165 Electron/24.2.0 Safari/537.36" etag="rGKZRmouS5IZ_HDQ4owZ" version="21.2.8" type="device">
   <diagram name="페이지-1" id="e_vJrELJ7RmYeI-Kox7W">
     <mxGraphModel dx="1706" dy="963" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -990,7 +990,7 @@
         <mxCell id="o5qLjIF7dfa7kNhHl1O0-278" value=":&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;getRecruitStatusUI&lt;/b&gt;" style="fontStyle=1;whiteSpace=wrap;html=1;" parent="o5qLjIF7dfa7kNhHl1O0-276" vertex="1">
           <mxGeometry x="113" y="130.5" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="o5qLjIF7dfa7kNhHl1O0-279" value=":&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;getRecruitStatus&lt;/b&gt;" style="fontStyle=1;whiteSpace=wrap;html=1;" parent="o5qLjIF7dfa7kNhHl1O0-276" vertex="1">
+        <mxCell id="o5qLjIF7dfa7kNhHl1O0-279" value=":&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;getApplyStatus&lt;/b&gt;" style="fontStyle=1;whiteSpace=wrap;html=1;" parent="o5qLjIF7dfa7kNhHl1O0-276" vertex="1">
           <mxGeometry x="363" y="130.5" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="o5qLjIF7dfa7kNhHl1O0-280" value="" style="endArrow=none;startArrow=none;endFill=0;startFill=0;endSize=8;html=1;verticalAlign=bottom;labelBackgroundColor=none;strokeWidth=3;rounded=0;" parent="o5qLjIF7dfa7kNhHl1O0-276" edge="1">
