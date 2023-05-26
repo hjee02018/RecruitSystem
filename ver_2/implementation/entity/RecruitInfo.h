@@ -6,10 +6,13 @@
 
 using namespace std;
 
+/**
+ * CompMember가 등록한 채용 정보를 관리하는 클래스로, 채용 정보(회사명,사업자번호, 지원자 수, 모집인원, 마감일, 업무)와  채용 정보 관리 함수 선언
+*/
 class RecruitInfo
 {
 private:
-	string m_company_name;
+    string m_company_name;
     int m_business_number;
     int m_num_of_apply;
     int m_num_of_people;
@@ -17,8 +20,8 @@ private:
     string m_task;
     ApplyInfoCollection m_apply_info_collection;
 public:
-	int getRecruitCount();
-	string getDepartName();
+    int getRecruitCount();
+    string getDepartName();
     string getCompanyName();
     int getBusinessNumber();
     string getTask();
@@ -26,7 +29,7 @@ public:
     time_t getDeadline();
     void addNewApply(ApplyInfo apply_info);
 
-    // �� ������ �����ε�
+    // 비교 연산자 오버로딩
     bool operator<(const RecruitInfo& other) const {
         return this->m_company_name < m_company_name;
     }
